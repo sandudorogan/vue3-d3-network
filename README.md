@@ -8,6 +8,10 @@
 
 ![vue d3 network](vue-d3-network.png)
 
+## Warning
+
+This is a non-exhaustive adaptation to vue.js v3
+
 ## Demo
 
 [Demo](https://emiliorizzo.github.io/vue-d3-network/)

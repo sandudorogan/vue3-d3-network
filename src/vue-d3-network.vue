@@ -4,6 +4,7 @@ import svgRenderer from './components/svgRenderer.vue'
 import canvasRenderer from './components/canvasRenderer.vue'
 import saveImage from './lib/js/saveImage.js'
 import svgExport from './lib/js/svgExport.js'
+import { h } from 'vue'
 const d3 = Object.assign({}, forceSimulation)
 
 export default {
@@ -93,7 +94,7 @@ export default {
       resizeListener: true
     }
   },
-  render (createElement) {
+  render (h) {
     let ref = 'svg'
     let props = {}
     let renderer = 'svg-renderer'
@@ -126,10 +127,10 @@ export default {
       props.canvasStyles = this.options.canvasStyles
     }
 
-    return createElement('div', {
+    return h('div', {
       attrs: { class: 'net' },
       on: { 'mousemove': this.move, '&touchmove': this.move }
-    }, [createElement(renderer, {
+    }, [h(renderer, {
       props, ref, on: { action: this.methodCall }
     })])
   },
@@ -224,7 +225,7 @@ export default {
     // -- Data
     updateOptions (options) {
       for (let op in options) {
-        if (this.hasOwnProperty(op)) {
+        if (typeof this[op] !== 'undefined') {
           this[op] = options[op]
         }
       }
@@ -269,10 +270,10 @@ export default {
     simulate (nodes, links) {
       let forces = this.forces
       let sim = d3.forceSimulation()
-        .stop()
-        .alpha(0.5)
-        // .alphaMin(0.05)
-        .nodes(nodes)
+          .stop()
+          .alpha(0.5)
+          // .alphaMin(0.05)
+          .nodes(nodes)
 
       if (forces.Center !== false) sim.force('center', d3.forceCenter(this.center.x, this.center.y))
       if (forces.X !== false) {
@@ -400,48 +401,48 @@ export default {
 </script>
 
 <style lang="stylus">
-  @import 'lib/styl/vars.styl'
+@import 'lib/styl/vars.styl'
 
-  .net
-    height 100%
-    margin 0
+.net
+  height 100%
+  margin 0
 
-  .net-svg
-    // fill: white // background color to export as image
+.net-svg
+  // fill: white // background color to export as image
 
-  .node
-    stroke alpha($dark, 0.7)
-    stroke-width 3px
-    transition fill 0.5s ease
-    fill $white
+.node
+  stroke alpha($dark, 0.7)
+  stroke-width 3px
+  transition fill 0.5s ease
+  fill $white
 
-  .node.selected
-    stroke $color2
+.node.selected
+  stroke $color2
 
-  .node.pinned
-    stroke alpha($warn, 0.6)
+.node.pinned
+  stroke alpha($warn, 0.6)
 
-  .link
-    stroke alpha($dark, 0.3)
+.link
+  stroke alpha($dark, 0.3)
 
-  .node, .link
-    stroke-linecap round
+.node, .link
+  stroke-linecap round
 
-    &:hover
-      stroke $warn
-      stroke-width 5px
+  &:hover
+    stroke $warn
+    stroke-width 5px
 
-  .link.selected
-    stroke alpha($color2, 0.6)
+.link.selected
+  stroke alpha($color2, 0.6)
 
-  .curve
-    fill none
+.curve
+  fill none
 
-  .node-label
-    fill $dark
+.node-label
+  fill $dark
 
-  .link-label
-    fill $dark
-    transform translate(0, -0.5em)
-    text-anchor middle
+.link-label
+  fill $dark
+  transform translate(0, -0.5em)
+  text-anchor middle
 </style>
