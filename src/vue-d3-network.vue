@@ -94,7 +94,7 @@ export default {
       resizeListener: true
     }
   },
-  render (h) {
+  render () {
     let ref = 'svg'
     let props = {}
     let renderer = 'svg-renderer'
