@@ -1,79 +1,111 @@
-<template lang="pug">
-  svg(
+<template>
+  <svg
     xmlns="http://www.w3.org/2000/svg"
-    xmlns:xlink= "http://www.w3.org/1999/xlink"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
     ref="svg"
     :width="size.w"
     :height="size.h"
     class="net-svg"
-    @mouseup='emit("dragEnd",[$event])'
-    @touchend.passive='emit("dragEnd",[$event])'
-    @touchstart.passive=''
-    )
-
-    //-> links
-    g.links#l-links
-        path(v-for="link in links"
-          :d="linkPath(link)"
-          :id="link.id"
-          @click='emit("linkClick",[$event,link])'
-          @touchstart.passive='emit("linkClick",[$event,link])'
-          v-bind='linkAttrs(link)'
-          :class='linkClass(link.id)'
-          :style='linkStyle(link)'
-          )
-
-    //- -> nodes
-    g.nodes#l-nodes(v-if='!noNodes')
-      template(v-for='(node,key) in nodes')
-        svg(v-if='svgIcon(node)'
-          :key='key'
-          :viewBox='svgIcon(node).attrs.viewBox'
-          :width='getNodeSize(node, "width")'
-          :height='getNodeSize(node, "height")'
-          @click='emit("nodeClick",[$event,node])'
-          @touchend.passive='emit("nodeClick",[$event,node])'
-          @mousedown.prevent='emit("dragStart",[$event,key])'
-          @touchstart.prevent='emit("dragStart",[$event,key])'
-          :x='node.x - getNodeSize(node, "width") / 2'
-          :y='node.y - getNodeSize(node, "height") / 2'
-          :style='nodeStyle(node)'
+    @mouseup="$emit('dragEnd', [$event])"
+    @touchend.passive="$emit('dragEnd', [$event])"
+  >
+    <g
+      id="l-links"
+      class="links"
+    >
+      <path
+        v-for="link in links"
+        :d="linkPath(link)"
+        :id="link.id"
+        @click="$emit('linkClick', [$event,link])"
+        @touchstart.passive="$emit('linkClick', [$event,link])"
+        v-bind='linkAttrs(link)'
+        :class='linkClass(link.id)'
+        :style='linkStyle(link)'
+      >
+      </path>
+    </g>
+    <g
+      id="l-nodes"
+      class="nodes"
+      v-if="!noNodes"
+    >
+      <template
+        v-for="(node, key) in nodes"
+        :key="key"
+      >
+        <svg
+          v-if="svgIcon(node)"
+          :viewBox="svgIcon(node).attrs.viewBox"
+          :width="getNodeSize(node, 'width')"
+          :height="getNodeSize(node, 'height')"
+          @click="$emit('nodeClick',[$event,node])"
+          @touchend.passive="$emit('nodeClick',[$event,node])"
+          @mousedown.prevent="$emit('dragStart',[$event,key])"
+          @touchstart.prevent="$emit('dragStart',[$event,key])"
+          :x="node.x - getNodeSize(node, 'width') / 2"
+          :y="node.y - getNodeSize(node, 'height') / 2"
+          :style="nodeStyle(node)"
           :title="node.name"
-          :class='nodeClass(node,["node-svg"])'
-          v-html='svgIcon(node).data'
-          v-bind='node._svgAttrs'
-          )
+          :class="nodeClass(node,['node-svg'])"
+          v-html="svgIcon(node).data"
+          v-bind="node._svgAttrs"
+        >
+        </svg>
+        <cicle
+          v-else
+          :r="getNodeSize(node) / 2"
+          @click="$emit('nodeClick',[$event,node])"
+          @touchend.passive="$emit('nodeClick',[$event,node])"
+          @mousedown.prevent="$emit('dragStart',[$event,key])"
+          @touchstart.prevent="$emit('dragStart',[$event,key])"
+          :cx="node.x"
+          :cy="node.y"
+          :style="nodeStyle(node)"
+          :title="node.name"
+          :class="nodeClass(node)"
+          v-bind="node._svgAttrs">
+        </cicle>
+      </template>
+    </g>
 
-        //- default circle nodes
-        circle(v-else
-        :key='key'
-        :r="getNodeSize(node) / 2"
-        @click='emit("nodeClick",[$event,node])'
-        @touchend.passive='emit("nodeClick",[$event,node])'
-        @mousedown.prevent='emit("dragStart",[$event,key])'
-        @touchstart.prevent='emit("dragStart",[$event,key])'
-        :cx="node.x"
-        :cy="node.y"
-        :style='nodeStyle(node)'
-        :title="node.name"
-        :class="nodeClass(node)"
-        v-bind='node._svgAttrs'
-        )
+    <g
+      class="labels"
+      id="link-labels"
+      v-if="linkLabels"
+    >
+      <text 
+        class="link-label"
+        v-for="link in links"
+        fontSize="fontSize"
+      >
+        <textPath
+          v-bind:xlink:href="'#' + link.id"
+          startOffset= "50%"
+        >
+          {{ link.name }}
+        </textPath>
+      </text>
+    </g>
 
-    //-> Links Labels
-    g.labels#link-labels(v-if='linkLabels')
-      text.link-label(v-for="link in links" :font-size="fontSize" )
-        textPath(v-bind:xlink:href="'#' + link.id" startOffset= "50%") {{ link.name }}
-
-    //- -> Node Labels
-    g.labels#node-labels( v-if="nodeLabels")
-      text.node-label(v-for="node in nodes"
-        :x='node.x + (getNodeSize(node) / 2) + (fontSize / 2)'
-        :y='node.y + labelOffset.y'
+    <g
+      class="labels"
+      id="node-labels"
+      v-if="nodeLabels"
+    >
+      <text 
+        class="node-label"
+        v-for="node in nodes"
+        :x="node.x + (getNodeSize(node) / 2) + (fontSize / 2)"
+        :y="node.y + labelOffset.y"
         :font-size="fontSize"
-        :class='(node._labelClass) ? node._labelClass : ""'
-        :stroke-width='fontSize / 8'
-      ) {{ node.name }}
+        :class="(node._labelClass) ? node._labelClass : ''"
+        :stroke-width="fontSize / 8"
+      >
+        {{ node.name }}
+      </text>
+    </g>
+  </svg>
 </template>
 <script>
 import svgExport from '../lib/js/svgExport.js'

@@ -6067,12 +6067,12 @@ var initialRadius = 10,
 
 
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"29429ebe-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/pug-plain-loader!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/svgRenderer.vue?vue&type=template&id=6f726b1f&lang=pug&
-var svgRenderervue_type_template_id_6f726b1f_lang_pug_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('svg',{ref:"svg",staticClass:"net-svg",attrs:{"xmlns":"http://www.w3.org/2000/svg","xmlns:xlink":"http://www.w3.org/1999/xlink","width":_vm.size.w,"height":_vm.size.h},on:{"mouseup":function($event){_vm.emit("dragEnd",[$event])},"&touchend":function($event){_vm.emit("dragEnd",[$event])},"&touchstart":function($event){}}},[_c('g',{staticClass:"links",attrs:{"id":"l-links"}},_vm._l((_vm.links),function(link){return _c('path',_vm._b({class:_vm.linkClass(link.id),style:(_vm.linkStyle(link)),attrs:{"d":_vm.linkPath(link),"id":link.id},on:{"click":function($event){_vm.emit("linkClick",[$event,link])},"&touchstart":function($event){_vm.emit("linkClick",[$event,link])}}},'path',_vm.linkAttrs(link),false))})),(!_vm.noNodes)?_c('g',{staticClass:"nodes",attrs:{"id":"l-nodes"}},[_vm._l((_vm.nodes),function(node,key){return [(_vm.svgIcon(node))?_c('svg',_vm._b({key:key,class:_vm.nodeClass(node,["node-svg"]),style:(_vm.nodeStyle(node)),attrs:{"viewBox":_vm.svgIcon(node).attrs.viewBox,"width":_vm.getNodeSize(node, "width"),"height":_vm.getNodeSize(node, "height"),"x":node.x - _vm.getNodeSize(node, "width") / 2,"y":node.y - _vm.getNodeSize(node, "height") / 2,"title":node.name},domProps:{"innerHTML":_vm._s(_vm.svgIcon(node).data)},on:{"click":function($event){_vm.emit("nodeClick",[$event,node])},"&touchend":function($event){_vm.emit("nodeClick",[$event,node])},"mousedown":function($event){$event.preventDefault();_vm.emit("dragStart",[$event,key])},"touchstart":function($event){$event.preventDefault();_vm.emit("dragStart",[$event,key])}}},'svg',node._svgAttrs,false)):_c('circle',_vm._b({key:key,class:_vm.nodeClass(node),style:(_vm.nodeStyle(node)),attrs:{"r":_vm.getNodeSize(node) / 2,"cx":node.x,"cy":node.y,"title":node.name},on:{"click":function($event){_vm.emit("nodeClick",[$event,node])},"&touchend":function($event){_vm.emit("nodeClick",[$event,node])},"mousedown":function($event){$event.preventDefault();_vm.emit("dragStart",[$event,key])},"touchstart":function($event){$event.preventDefault();_vm.emit("dragStart",[$event,key])}}},'circle',node._svgAttrs,false))]})],2):_vm._e(),(_vm.linkLabels)?_c('g',{staticClass:"labels",attrs:{"id":"link-labels"}},_vm._l((_vm.links),function(link){return _c('text',{staticClass:"link-label",attrs:{"font-size":_vm.fontSize}},[_c('textPath',{attrs:{"xlink:href":'#' + link.id,"startOffset":"50%"}},[_vm._v(_vm._s(link.name))])])})):_vm._e(),(_vm.nodeLabels)?_c('g',{staticClass:"labels",attrs:{"id":"node-labels"}},_vm._l((_vm.nodes),function(node){return _c('text',{staticClass:"node-label",class:(node._labelClass) ? node._labelClass : "",attrs:{"x":node.x + (_vm.getNodeSize(node) / 2) + (_vm.fontSize / 2),"y":node.y + _vm.labelOffset.y,"font-size":_vm.fontSize,"stroke-width":_vm.fontSize / 8}},[_vm._v(_vm._s(node.name))])})):_vm._e()])}
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"29429ebe-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/svgRenderer.vue?vue&type=template&id=c95adbd6&
+var svgRenderervue_type_template_id_c95adbd6_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('svg',{ref:"svg",staticClass:"net-svg",attrs:{"xmlns":"http://www.w3.org/2000/svg","xmlns:xlink":"http://www.w3.org/1999/xlink","width":_vm.size.w,"height":_vm.size.h},on:{"mouseup":function($event){_vm.$emit('dragEnd', [$event])},"&touchend":function($event){_vm.$emit('dragEnd', [$event])}}},[_c('g',{staticClass:"links",attrs:{"id":"l-links"}},_vm._l((_vm.links),function(link){return _c('path',_vm._b({class:_vm.linkClass(link.id),style:(_vm.linkStyle(link)),attrs:{"d":_vm.linkPath(link),"id":link.id},on:{"click":function($event){_vm.$emit('linkClick', [$event,link])},"&touchstart":function($event){_vm.$emit('linkClick', [$event,link])}}},'path',_vm.linkAttrs(link),false))})),(!_vm.noNodes)?_c('g',{staticClass:"nodes",attrs:{"id":"l-nodes"}},[_vm._l((_vm.nodes),function(node,key){return [(_vm.svgIcon(node))?_c('svg',_vm._b({class:_vm.nodeClass(node,['node-svg']),style:(_vm.nodeStyle(node)),attrs:{"viewBox":_vm.svgIcon(node).attrs.viewBox,"width":_vm.getNodeSize(node, 'width'),"height":_vm.getNodeSize(node, 'height'),"x":node.x - _vm.getNodeSize(node, 'width') / 2,"y":node.y - _vm.getNodeSize(node, 'height') / 2,"title":node.name},domProps:{"innerHTML":_vm._s(_vm.svgIcon(node).data)},on:{"click":function($event){_vm.$emit('nodeClick',[$event,node])},"&touchend":function($event){_vm.$emit('nodeClick',[$event,node])},"mousedown":function($event){$event.preventDefault();_vm.$emit('dragStart',[$event,key])},"touchstart":function($event){$event.preventDefault();_vm.$emit('dragStart',[$event,key])}}},'svg',node._svgAttrs,false)):_c('cicle',_vm._b({class:_vm.nodeClass(node),style:(_vm.nodeStyle(node)),attrs:{"r":_vm.getNodeSize(node) / 2,"cx":node.x,"cy":node.y,"title":node.name},on:{"click":function($event){_vm.$emit('nodeClick',[$event,node])},"&touchend":function($event){_vm.$emit('nodeClick',[$event,node])},"mousedown":function($event){$event.preventDefault();_vm.$emit('dragStart',[$event,key])},"touchstart":function($event){$event.preventDefault();_vm.$emit('dragStart',[$event,key])}}},'cicle',node._svgAttrs,false))]})],2):_vm._e(),(_vm.linkLabels)?_c('g',{staticClass:"labels",attrs:{"id":"link-labels"}},_vm._l((_vm.links),function(link){return _c('text',{staticClass:"link-label",attrs:{"fontSize":"fontSize"}},[_c('textPath',{attrs:{"xlink:href":'#' + link.id,"startOffset":"50%"}},[_vm._v("\n        "+_vm._s(link.name)+"\n      ")])])})):_vm._e(),(_vm.nodeLabels)?_c('g',{staticClass:"labels",attrs:{"id":"node-labels"}},_vm._l((_vm.nodes),function(node){return _c('text',{staticClass:"node-label",class:(node._labelClass) ? node._labelClass : '',attrs:{"x":node.x + (_vm.getNodeSize(node) / 2) + (_vm.fontSize / 2),"y":node.y + _vm.labelOffset.y,"font-size":_vm.fontSize,"stroke-width":_vm.fontSize / 8}},[_vm._v("\n      "+_vm._s(node.name)+"\n    ")])})):_vm._e()])}
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/components/svgRenderer.vue?vue&type=template&id=6f726b1f&lang=pug&
+// CONCATENATED MODULE: ./src/components/svgRenderer.vue?vue&type=template&id=c95adbd6&
 
 // EXTERNAL MODULE: ./node_modules/@babel/runtime-corejs2/core-js/parse-int.js
 var parse_int = __webpack_require__("e814");
@@ -6445,6 +6445,38 @@ var values_default = /*#__PURE__*/__webpack_require__.n(object_values);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ var svgRenderervue_type_script_lang_js_ = ({
   name: 'svg-renderer',
@@ -6666,7 +6698,7 @@ function normalizeComponent (
 
 var component = normalizeComponent(
   components_svgRenderervue_type_script_lang_js_,
-  svgRenderervue_type_template_id_6f726b1f_lang_pug_render,
+  svgRenderervue_type_template_id_c95adbd6_render,
   staticRenderFns,
   false,
   null,
