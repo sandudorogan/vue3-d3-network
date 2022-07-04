@@ -132,13 +132,11 @@ export default {
         class: ['net'],
         onMouseMove: this.move,
         onTouchMove: this.move 
-      }, {
-        default: () => h(
-          renderer, {
-            props, ref, onAction: this.methodCall
-          }
-        )
-      }
+      }, [h(
+        renderer, {
+          props, ref, onAction: this.methodCall
+        }
+      )]
     )
   },
   created () {
