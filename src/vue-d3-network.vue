@@ -170,6 +170,7 @@ export default {
       }
     }
   },
+  emits: ['node-click', 'link-click'],
   watch: {
     netNodes (newValue) {
       this.buildNodes(newValue)
