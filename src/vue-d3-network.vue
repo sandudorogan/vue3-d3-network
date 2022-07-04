@@ -147,7 +147,7 @@ export default {
     })
     if (this.resizeListener) window.addEventListener('resize', this.onResize)
   },
-  beforeDestroy () {
+  beforeUnmount () {
     if (this.resizeListener) window.removeEventListener('resize', this.onResize)
   },
   computed: {
