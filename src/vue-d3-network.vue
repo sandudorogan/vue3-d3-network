@@ -97,7 +97,7 @@ export default {
   render () {
     let ref = 'svg'
     let props = {}
-    let renderer = 'svg-renderer'
+    let renderer = svgRenderer
     let bindProps = [
       'size',
       'nodes',
@@ -122,17 +122,24 @@ export default {
     props.nodeSym = this.nodeSvg
 
     if (this.canvas) {
-      renderer = 'canvas-renderer'
+      renderer = canvasRenderer
       ref = 'canvas'
       props.canvasStyles = this.options.canvasStyles
     }
 
-    return h('div', {
-      attrs: { class: 'net' },
-      on: { 'mousemove': this.move, '&touchmove': this.move }
-    }, [h(renderer, {
-      props, ref, on: { action: this.methodCall }
-    })])
+    return h(
+      'div', {
+        class: ['net'],
+        onMouseMove: this.move,
+        onTouchMove: this.move 
+      }, {
+        default: () => h(
+          renderer, {
+            props, ref, onAction: this.methodCall
+          }
+        )
+      }
+    )
   },
   created () {
     this.updateOptions(this.options)

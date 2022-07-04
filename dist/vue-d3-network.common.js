@@ -6067,7 +6067,7 @@ var initialRadius = 10,
 
 
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"0f51c350-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/pug-plain-loader!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/svgRenderer.vue?vue&type=template&id=6f726b1f&lang=pug&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"29429ebe-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/pug-plain-loader!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/svgRenderer.vue?vue&type=template&id=6f726b1f&lang=pug&
 var svgRenderervue_type_template_id_6f726b1f_lang_pug_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('svg',{ref:"svg",staticClass:"net-svg",attrs:{"xmlns":"http://www.w3.org/2000/svg","xmlns:xlink":"http://www.w3.org/1999/xlink","width":_vm.size.w,"height":_vm.size.h},on:{"mouseup":function($event){_vm.emit("dragEnd",[$event])},"&touchend":function($event){_vm.emit("dragEnd",[$event])},"&touchstart":function($event){}}},[_c('g',{staticClass:"links",attrs:{"id":"l-links"}},_vm._l((_vm.links),function(link){return _c('path',_vm._b({class:_vm.linkClass(link.id),style:(_vm.linkStyle(link)),attrs:{"d":_vm.linkPath(link),"id":link.id},on:{"click":function($event){_vm.emit("linkClick",[$event,link])},"&touchstart":function($event){_vm.emit("linkClick",[$event,link])}}},'path',_vm.linkAttrs(link),false))})),(!_vm.noNodes)?_c('g',{staticClass:"nodes",attrs:{"id":"l-nodes"}},[_vm._l((_vm.nodes),function(node,key){return [(_vm.svgIcon(node))?_c('svg',_vm._b({key:key,class:_vm.nodeClass(node,["node-svg"]),style:(_vm.nodeStyle(node)),attrs:{"viewBox":_vm.svgIcon(node).attrs.viewBox,"width":_vm.getNodeSize(node, "width"),"height":_vm.getNodeSize(node, "height"),"x":node.x - _vm.getNodeSize(node, "width") / 2,"y":node.y - _vm.getNodeSize(node, "height") / 2,"title":node.name},domProps:{"innerHTML":_vm._s(_vm.svgIcon(node).data)},on:{"click":function($event){_vm.emit("nodeClick",[$event,node])},"&touchend":function($event){_vm.emit("nodeClick",[$event,node])},"mousedown":function($event){$event.preventDefault();_vm.emit("dragStart",[$event,key])},"touchstart":function($event){$event.preventDefault();_vm.emit("dragStart",[$event,key])}}},'svg',node._svgAttrs,false)):_c('circle',_vm._b({key:key,class:_vm.nodeClass(node),style:(_vm.nodeStyle(node)),attrs:{"r":_vm.getNodeSize(node) / 2,"cx":node.x,"cy":node.y,"title":node.name},on:{"click":function($event){_vm.emit("nodeClick",[$event,node])},"&touchend":function($event){_vm.emit("nodeClick",[$event,node])},"mousedown":function($event){$event.preventDefault();_vm.emit("dragStart",[$event,key])},"touchstart":function($event){$event.preventDefault();_vm.emit("dragStart",[$event,key])}}},'circle',node._svgAttrs,false))]})],2):_vm._e(),(_vm.linkLabels)?_c('g',{staticClass:"labels",attrs:{"id":"link-labels"}},_vm._l((_vm.links),function(link){return _c('text',{staticClass:"link-label",attrs:{"font-size":_vm.fontSize}},[_c('textPath',{attrs:{"xlink:href":'#' + link.id,"startOffset":"50%"}},[_vm._v(_vm._s(link.name))])])})):_vm._e(),(_vm.nodeLabels)?_c('g',{staticClass:"labels",attrs:{"id":"node-labels"}},_vm._l((_vm.nodes),function(node){return _c('text',{staticClass:"node-label",class:(node._labelClass) ? node._labelClass : "",attrs:{"x":node.x + (_vm.getNodeSize(node) / 2) + (_vm.fontSize / 2),"y":node.y + _vm.labelOffset.y,"font-size":_vm.fontSize,"stroke-width":_vm.fontSize / 8}},[_vm._v(_vm._s(node.name))])})):_vm._e()])}
 var staticRenderFns = []
 
@@ -6676,12 +6676,12 @@ var component = normalizeComponent(
 )
 
 /* harmony default export */ var svgRenderer = (component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"0f51c350-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/pug-plain-loader!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/canvasRenderer.vue?vue&type=template&id=15b33650&lang=pug&
-var canvasRenderervue_type_template_id_15b33650_lang_pug_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('canvas',{directives:[{name:"render-canvas",rawName:"v-render-canvas",value:({links: _vm.links, nodes: _vm.nodes}),expression:"{links, nodes}"}],ref:"canvas",style:(_vm.canvasStyle),attrs:{"id":"canvas","width":_vm.size.w,"height":_vm.size.h},on:{"mouseup":function($event){$event.preventDefault();return _vm.canvasClick($event)},"mousedown":function($event){$event.preventDefault();return _vm.canvasClick($event)},"touchstart":function($event){$event.preventDefault();return _vm.canvasClick($event)},"&touchend":function($event){return _vm.canvasClick($event)}}})}
-var canvasRenderervue_type_template_id_15b33650_lang_pug_staticRenderFns = []
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"29429ebe-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/pug-plain-loader!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/canvasRenderer.vue?vue&type=template&id=53e63218&lang=pug&
+var canvasRenderervue_type_template_id_53e63218_lang_pug_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('canvas',{directives:[{name:"render-canvas",rawName:"v-render-canvas",value:({links: _vm.links, nodes: _vm.nodes}),expression:"{links, nodes}"}],ref:"canvas",style:(_vm.canvasStyle),attrs:{"id":"canvas","width":_vm.size.w,"height":_vm.size.h},on:{"mouseup":function($event){$event.preventDefault();return _vm.canvasClick($event)},"mousedown":function($event){$event.preventDefault();return _vm.canvasClick($event)},"touchstart":function($event){$event.preventDefault();return _vm.canvasClick($event)},"&touchend":function($event){return _vm.canvasClick($event)}}})}
+var canvasRenderervue_type_template_id_53e63218_lang_pug_staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/components/canvasRenderer.vue?vue&type=template&id=15b33650&lang=pug&
+// CONCATENATED MODULE: ./src/components/canvasRenderer.vue?vue&type=template&id=53e63218&lang=pug&
 
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es6.string.link.js
 var es6_string_link = __webpack_require__("b54a");
@@ -6898,10 +6898,12 @@ var es6_regexp_to_string = __webpack_require__("6b54");
     }
   },
   directives: {
-    renderCanvas: function renderCanvas(canvas, data, vnode) {
-      var nodes = data.value.nodes;
-      var links = data.value.links;
-      vnode.context.draw(nodes, links, canvas);
+    renderCanvas: {
+      mounted: function mounted(canvas, data, vnode) {
+        var nodes = data.value.nodes;
+        var links = data.value.links;
+        vnode.context.draw(nodes, links, canvas);
+      }
     }
   },
   created: function created() {
@@ -7400,8 +7402,8 @@ var canvasRenderervue_type_style_index_0_lang_stylus_ = __webpack_require__("3d1
 
 var canvasRenderer_component = normalizeComponent(
   components_canvasRenderervue_type_script_lang_js_,
-  canvasRenderervue_type_template_id_15b33650_lang_pug_render,
-  canvasRenderervue_type_template_id_15b33650_lang_pug_staticRenderFns,
+  canvasRenderervue_type_template_id_53e63218_lang_pug_render,
+  canvasRenderervue_type_template_id_53e63218_lang_pug_staticRenderFns,
   false,
   null,
   null,
@@ -7553,9 +7555,11 @@ var d3 = assign_default()({}, d3_force_namespaceObject);
     };
   },
   render: function render() {
+    var _this = this;
+
     var ref = 'svg';
     var props = {};
-    var renderer = 'svg-renderer';
+    var renderer = svgRenderer;
     var bindProps = ['size', 'nodes', 'links', 'selected', 'linksSelected', 'strLinks', 'linkWidth', 'nodeLabels', 'linkLabels', 'fontSize', 'labelOffset', 'offset', 'padding', 'nodeSize', 'noNodes'];
 
     for (var _i = 0; _i < bindProps.length; _i++) {
@@ -7566,26 +7570,24 @@ var d3 = assign_default()({}, d3_force_namespaceObject);
     props.nodeSym = this.nodeSvg;
 
     if (this.canvas) {
-      renderer = 'canvas-renderer';
+      renderer = canvasRenderer;
       ref = 'canvas';
       props.canvasStyles = this.options.canvasStyles;
     }
 
     return Object(external_commonjs_vue_commonjs2_vue_root_Vue_["h"])('div', {
-      attrs: {
-        class: 'net'
-      },
-      on: {
-        'mousemove': this.move,
-        '&touchmove': this.move
+      class: ['net'],
+      onMouseMove: this.move,
+      onTouchMove: this.move
+    }, {
+      default: function _default() {
+        return Object(external_commonjs_vue_commonjs2_vue_root_Vue_["h"])(renderer, {
+          props: props,
+          ref: ref,
+          onAction: _this.methodCall
+        });
       }
-    }, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["h"])(renderer, {
-      props: props,
-      ref: ref,
-      on: {
-        action: this.methodCall
-      }
-    })]);
+    });
   },
   created: function created() {
     this.updateOptions(this.options);
@@ -7594,11 +7596,11 @@ var d3 = assign_default()({}, d3_force_namespaceObject);
     this.updateNodeSvg();
   },
   mounted: function mounted() {
-    var _this = this;
+    var _this2 = this;
 
     this.onResize();
     this.$nextTick(function () {
-      _this.animate();
+      _this2.animate();
     });
     if (this.resizeListener) window.addEventListener('resize', this.onResize);
   },
@@ -7693,11 +7695,11 @@ var d3 = assign_default()({}, d3_force_namespaceObject);
       }
     },
     buildNodes: function buildNodes(nodes) {
-      var _this2 = this;
+      var _this3 = this;
 
       this.nodes = nodes.map(function (node, index) {
         // node formatter option
-        node = _this2.itemCb(_this2.nodeCb, node); // index as default node id
+        node = _this3.itemCb(_this3.nodeCb, node); // index as default node id
 
         if (!node.id && node.id !== 0) node.id = index; // initialize node coords
 
@@ -7708,18 +7710,18 @@ var d3 = assign_default()({}, d3_force_namespaceObject);
 
         if (node.svgSym) {
           node.svgIcon = svgExport.svgElFromString(node.svgSym);
-          if (!_this2.canvas && node.svgIcon && !node.svgObj) node.svgObj = svgExport.toObject(node.svgIcon);
+          if (!_this3.canvas && node.svgIcon && !node.svgObj) node.svgObj = svgExport.toObject(node.svgIcon);
         }
 
         return node;
       });
     },
     buildLinks: function buildLinks(links) {
-      var _this3 = this;
+      var _this4 = this;
 
       return links.concat().map(function (link, index) {
         // link formatter option
-        link = _this3.itemCb(_this3.linkCb, link); // source and target for d3
+        link = _this4.itemCb(_this4.linkCb, link); // source and target for d3
 
         link.source = link.sid;
         link.target = link.tid;
@@ -7858,7 +7860,7 @@ var d3 = assign_default()({}, d3_force_namespaceObject);
       };
     },
     screenShot: function screenShot(name, bgColor, toSVG, svgAllCss) {
-      var _this4 = this;
+      var _this5 = this;
 
       var exportFunc;
       var args = [];
@@ -7878,7 +7880,7 @@ var d3 = assign_default()({}, d3_force_namespaceObject);
           if (!toSVG) saveImage.save(url, name);else saveImage.download(url, name);
         }
 
-        _this4.$emit('screen-shot', err);
+        _this5.$emit('screen-shot', err);
       }].concat(_toConsumableArray(args)));
     }
   }
