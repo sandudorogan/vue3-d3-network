@@ -1,14 +1,16 @@
-<template lang="pug">
-  canvas(id='canvas' ref='canvas'
-    :width='size.w'
-    :height='size.h'
-    :style='canvasStyle'
-    @mouseup.prevent='canvasClick'
-    @mousedown.prevent='canvasClick'
-    @touchstart.prevent='canvasClick'
-    @touchend.passive='canvasClick'
-    v-render-canvas='{links, nodes}'
-    )
+<template>
+  <canvas 
+    id="canvas"
+    ref="canvas"
+    :width="size.w"
+    :height="size.h"
+    :style="canvasStyle"
+    @mouseup.prevent="canvasClick"
+    @mousedown.prevent="canvasClick"
+    @touchstart.prevent="canvasClick"
+    @touchend.passive="canvasClick"
+    v-render-canvas="{links, nodes}">
+  </canvas>
 </template>
 <script>
 import canvasStyles from '../lib/js/canvasStyles.js'
@@ -57,10 +59,12 @@ export default {
     }
   },
   directives: {
-    renderCanvas (canvas, data, vnode) {
-      let nodes = data.value.nodes
-      let links = data.value.links
-      vnode.context.draw(nodes, links, canvas)
+    renderCanvas: {
+      mounted (canvas, data, vnode) {
+        let nodes = data.value.nodes
+        let links = data.value.links
+        vnode.context.draw(nodes, links, canvas)
+      }
     }
   },
   created () {
