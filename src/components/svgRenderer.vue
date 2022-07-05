@@ -107,6 +107,7 @@
     </g>
   </svg>
 </template>
+
 <script>
 import svgExport from '../lib/js/svgExport.js'
 
@@ -129,7 +130,6 @@ export default {
     'labelOffset',
     'nodeSym'
   ],
-
   computed: {
     nodeSvg () {
       if (this.nodeSym) {

@@ -134,7 +134,7 @@ export default {
         onTouchMove: this.move 
       }, [h(
         renderer, {
-          props, ref, onAction: this.methodCall
+          ...props, ref, onAction: this.methodCall
         }
       )]
     )

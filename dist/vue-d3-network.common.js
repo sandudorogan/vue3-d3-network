@@ -1749,7 +1749,7 @@ var initialRadius = 10,
 
 ;// CONCATENATED MODULE: external {"commonjs":"vue","commonjs2":"vue","root":"Vue"}
 var external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject = require("vue");
-;// CONCATENATED MODULE: ./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/svgRenderer.vue?vue&type=template&id=e5308dd8
+;// CONCATENATED MODULE: ./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/svgRenderer.vue?vue&type=template&id=056f92f2
 
 
 const _hoisted_1 = ["width", "height"]
@@ -1871,7 +1871,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       : (0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.createCommentVNode)("", true)
   ], 40, _hoisted_1))
 }
-;// CONCATENATED MODULE: ./src/components/svgRenderer.vue?vue&type=template&id=e5308dd8
+;// CONCATENATED MODULE: ./src/components/svgRenderer.vue?vue&type=template&id=056f92f2
 
 ;// CONCATENATED MODULE: ./src/lib/js/svgExport.js
 /* eslint-disable */
@@ -2042,7 +2042,6 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     'labelOffset',
     'nodeSym'
   ],
-
   computed: {
     nodeSvg () {
       if (this.nodeSym) {
@@ -2939,7 +2938,7 @@ const d3 = Object.assign({}, d3_force_src_namespaceObject)
         onTouchMove: this.move 
       }, [(0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.h)(
         renderer, {
-          props, ref, onAction: this.methodCall
+          ...props, ref, onAction: this.methodCall
         }
       )]
     )
@@ -3210,10 +3209,10 @@ const d3 = Object.assign({}, d3_force_src_namespaceObject)
 
 ;// CONCATENATED MODULE: ./src/vue-d3-network.vue?vue&type=script&lang=js
  
-;// CONCATENATED MODULE: ./node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-39.use[0]!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-39.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-39.use[2]!./node_modules/stylus-loader/index.js??clonedRuleSet-39.use[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/vue-d3-network.vue?vue&type=style&index=0&id=be510ea6&lang=stylus
+;// CONCATENATED MODULE: ./node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-39.use[0]!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-39.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-39.use[2]!./node_modules/stylus-loader/index.js??clonedRuleSet-39.use[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/vue-d3-network.vue?vue&type=style&index=0&id=3d42cb6e&lang=stylus
 // extracted by mini-css-extract-plugin
 
-;// CONCATENATED MODULE: ./src/vue-d3-network.vue?vue&type=style&index=0&id=be510ea6&lang=stylus
+;// CONCATENATED MODULE: ./src/vue-d3-network.vue?vue&type=style&index=0&id=3d42cb6e&lang=stylus
 
 ;// CONCATENATED MODULE: ./src/vue-d3-network.vue
 
