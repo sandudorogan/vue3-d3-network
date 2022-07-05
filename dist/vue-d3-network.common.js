@@ -2802,7 +2802,6 @@ const canvasRenderer_exports_ = /*#__PURE__*/(0,exportHelper/* default */.Z)(can
 
 ;// CONCATENATED MODULE: ./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/vue-d3-network.vue?vue&type=script&lang=js
 
-/* eslint-disable */
 
 
 
@@ -2934,8 +2933,8 @@ const d3 = Object.assign({}, d3_force_src_namespaceObject)
     return (0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.h)(
       'div', {
         class: ['net'],
-        onMouseMove: this.move,
-        onTouchMove: this.move 
+        onMousemove: this.move,
+        onTouchmove: this.move 
       }, [(0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.h)(
         renderer, {
           ...props, ref, onAction: this.methodCall
@@ -3209,10 +3208,10 @@ const d3 = Object.assign({}, d3_force_src_namespaceObject)
 
 ;// CONCATENATED MODULE: ./src/vue-d3-network.vue?vue&type=script&lang=js
  
-;// CONCATENATED MODULE: ./node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-39.use[0]!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-39.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-39.use[2]!./node_modules/stylus-loader/index.js??clonedRuleSet-39.use[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/vue-d3-network.vue?vue&type=style&index=0&id=3d42cb6e&lang=stylus
+;// CONCATENATED MODULE: ./node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-39.use[0]!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-39.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-39.use[2]!./node_modules/stylus-loader/index.js??clonedRuleSet-39.use[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/vue-d3-network.vue?vue&type=style&index=0&id=63a72836&lang=stylus
 // extracted by mini-css-extract-plugin
 
-;// CONCATENATED MODULE: ./src/vue-d3-network.vue?vue&type=style&index=0&id=3d42cb6e&lang=stylus
+;// CONCATENATED MODULE: ./src/vue-d3-network.vue?vue&type=style&index=0&id=63a72836&lang=stylus
 
 ;// CONCATENATED MODULE: ./src/vue-d3-network.vue
 

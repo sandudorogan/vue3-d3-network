@@ -130,8 +130,8 @@ export default {
     return h(
       'div', {
         class: ['net'],
-        onMouseMove: this.move,
-        onTouchMove: this.move 
+        onMousemove: this.move,
+        onTouchmove: this.move 
       }, [h(
         renderer, {
           ...props, ref, onAction: this.methodCall
