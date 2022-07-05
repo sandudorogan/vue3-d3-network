@@ -52,7 +52,7 @@
           v-bind="node._svgAttrs"
         >
         </svg>
-        <cicle
+        <circle
           v-else
           :r="getNodeSize(node) / 2"
           @click="emit('nodeClick',[$event,node])"
@@ -65,7 +65,7 @@
           :title="node.name"
           :class="nodeClass(node)"
           v-bind="node._svgAttrs">
-        </cicle>
+        </circle>
       </template>
     </g>
 
