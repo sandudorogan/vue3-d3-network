@@ -32,7 +32,7 @@ This is the result of us having to ship Nuxt 3 upgrade on a deadline.
 ## Installation
 
 ``` bash
-npm install vue-d3-network --save
+yarn add https://github.com/sandudorogan/vue3-d3-network
 
 ```
 
