@@ -10,7 +10,11 @@
 
 ## Warning
 
-This is a non-exhaustive adaptation to vue.js v3
+This version has been thoroughly tested and is in active use in a production env of a Nuxt 3 project. 
+BUT only the SVG graph with touch support & nodes selection. 
+The screenshot feature has not been tested. Neither the canvas. Nor any of the tests have been updated.
+Linter fails (event though it shouldn't) - but again, no time has been spent on it. 
+This is the result of us having to ship Nuxt 3 upgrade on a deadline.
 
 ## Demo
 
