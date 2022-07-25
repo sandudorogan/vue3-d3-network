@@ -1,6 +1,6 @@
 
 
-[![GitHub issues](https://img.shields.io/github/issues/emiliorizzo/vue-d3-network.svg)](https://github.com/emiliorizzo/vue-d3-network/issues) [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/emiliorizzo/vue-d3-network/master/LICENSE) [![npm](https://img.shields.io/npm/v/vue-d3-network.svg)](https://www.npmjs.com/package/vue-d3-network)
+[![GitHub issues](https://img.shields.io/github/issues/emiliorizzo/vue-d3-network.svg)](https://github.com/emiliorizzo/vue-d3-network/issues) [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/emiliorizzo/vue-d3-network/master/LICENSE) [![npm](https://img.shields.io/npm/v/vue-d3-network.svg)](https://www.npmjs.com/package/vue3-d3-network)
 
 # vue-d3-network on Vue 3 (alpha)
 
@@ -32,8 +32,7 @@ This is the result of us having to ship Nuxt 3 upgrade on a deadline.
 ## Installation
 
 ``` bash
-yarn add https://github.com/sandudorogan/vue3-d3-network
-
+yarn add vue3-d3-network
 ```
 
 ## Usage

@@ -1,7 +1,7 @@
 {
-  "name": "vue-d3-network",
-  "version": "0.1.28",
-  "description": "Vue component to graph networks using d3-force",
+  "name": "vue3-d3-network",
+  "version": "1.1.28",
+  "description": "Vue 3 component to graph networks using d3-force",
   "main": "dist/vue-d3-network.umd.js",
   "scripts": {
     "example": "vue-cli-service build --dest example",
@@ -15,10 +15,10 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/emiliorizzo/vue-d3-network"
+    "url": "https://github.com/sandudorogan/vue3-d3-network"
   },
   "bugs": {
-    "url": "https://github.com/emiliorizzo/vue-d3-network/issues"
+    "url": "https://github.com/sandudorogan/vue3-d3-network/issues"
   },
   "keywords": [
     "vue",
