@@ -69,7 +69,7 @@
 <script>
 import defaultData from './data.js'
 export default {
-  name: 'd3-net-example-menu',
+  name: 'D3NetExampleMenu',
   props: ['links', 'nodes', 'settings', 'options'],
   data () {
     let data = Object.assign({}, defaultData)

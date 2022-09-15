@@ -20,7 +20,7 @@ import ghIcon from '../assets/github.svg?raw'
 import d3NetExample from './d3-net-example.vue'
 
 export default {
-  name: 'example',
+  name: 'Example',
   components: {
     d3NetExample
   },

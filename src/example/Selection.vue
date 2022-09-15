@@ -25,19 +25,19 @@
 </template>
 <script>
 export default {
-  name: 'd3-net-selection',
+  name: 'D3NetSelection',
   props: ['data'],
-  methods: {
-    emit (action, args) {
-      this.$emit('action', action, args)
-    }
-  },
   computed: {
     links () {
       return this.data.links
     },
     nodes () {
       return this.data.nodes
+    }
+  },
+  methods: {
+    emit (action, args) {
+      this.$emit('action', action, args)
     }
   }
 }

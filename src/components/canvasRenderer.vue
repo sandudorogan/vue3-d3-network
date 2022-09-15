@@ -17,7 +17,16 @@ import canvasStyles from '../lib/js/canvasStyles.js'
 import stylePicker from '../lib/js/stylePicker.js'
 import svgExport from '../lib/js/svgExport.js'
 export default {
-  name: 'canvas-renderer',
+  name: 'CanvasRenderer',
+  directives: {
+    renderCanvas: {
+      mounted (canvas, data, vnode) {
+        let nodes = data.value.nodes
+        let links = data.value.links
+        vnode.context.draw(nodes, links, canvas)
+      }
+    }
+  },
   props: [
     'size',
     'offset',
@@ -58,13 +67,12 @@ export default {
       return { left, top }
     }
   },
-  directives: {
-    renderCanvas: {
-      mounted (canvas, data, vnode) {
-        let nodes = data.value.nodes
-        let links = data.value.links
-        vnode.context.draw(nodes, links, canvas)
-      }
+  watch: {
+    nodeSize () {
+      this.resetSprites()
+    },
+    canvasStyles () {
+      this.resetSprites()
     }
   },
   created () {
@@ -80,14 +88,6 @@ export default {
       vm.hitCanvas.width = vm.size.w
       vm.hitCanvas.height = vm.size.h
     })
-  },
-  watch: {
-    nodeSize () {
-      this.resetSprites()
-    },
-    canvasStyles () {
-      this.resetSprites()
-    }
   },
   methods: {
     //  canvas to png

@@ -1,8 +1,8 @@
 <template>
   <svg
+    ref="svg"
     xmlns="http://www.w3.org/2000/svg"
     xmlns:xlink="http://www.w3.org/1999/xlink"
-    ref="svg"
     :width="size.w"
     :height="size.h"
     class="net-svg"
@@ -15,20 +15,20 @@
     >
       <path
         v-for="link in links"
-        :d="linkPath(link)"
+        :key="link.id"
         :id="link.id"
+        :d="linkPath(link)"
+        v-bind="linkAttrs(link)"
+        :class="linkClass(link.id)"
+        :style="linkStyle(link)"
         @click="emit('linkClick', [$event,link])"
         @touchstart.passive="emit('linkClick', [$event,link])"
-        v-bind='linkAttrs(link)'
-        :class='linkClass(link.id)'
-        :style='linkStyle(link)'
-      >
-      </path>
+      />
     </g>
     <g
+      v-if="!noNodes"
       id="l-nodes"
       class="nodes"
-      v-if="!noNodes"
     >
       <template
         v-for="(node, key) in nodes"
@@ -39,49 +39,49 @@
           :viewBox="svgIcon(node).attrs.viewBox"
           :width="getNodeSize(node, 'width')"
           :height="getNodeSize(node, 'height')"
-          @click="emit('nodeClick',[$event,node])"
-          @touchend.passive="emit('nodeClick',[$event,node])"
-          @mousedown.prevent="emit('dragStart',[$event,key])"
-          @touchstart.prevent="emit('dragStart',[$event,key])"
           :x="node.x - getNodeSize(node, 'width') / 2"
           :y="node.y - getNodeSize(node, 'height') / 2"
           :style="nodeStyle(node)"
           :title="node.name"
           :class="nodeClass(node,['node-svg'])"
-          v-html="svgIcon(node).data"
           v-bind="node._svgAttrs"
-        >
-        </svg>
-        <circle
-          v-else
-          :r="getNodeSize(node) / 2"
           @click="emit('nodeClick',[$event,node])"
           @touchend.passive="emit('nodeClick',[$event,node])"
           @mousedown.prevent="emit('dragStart',[$event,key])"
           @touchstart.prevent="emit('dragStart',[$event,key])"
+          v-html="svgIcon(node).data"
+        />
+        <circle
+          v-else
+          :r="getNodeSize(node) / 2"
           :cx="node.x"
           :cy="node.y"
           :style="nodeStyle(node)"
           :title="node.name"
           :class="nodeClass(node)"
-          v-bind="node._svgAttrs">
-        </circle>
+          v-bind="node._svgAttrs"
+          @click="emit('nodeClick',[$event,node])"
+          @touchend.passive="emit('nodeClick',[$event,node])"
+          @mousedown.prevent="emit('dragStart',[$event,key])"
+          @touchstart.prevent="emit('dragStart',[$event,key])"
+        />
       </template>
     </g>
 
     <g
-      class="labels"
-      id="link-labels"
       v-if="linkLabels"
+      id="link-labels"
+      class="labels"
     >
       <text 
-        class="link-label"
         v-for="link in links"
+        :key="link.id"
+        class="link-label"
         fontSize="fontSize"
       >
         <textPath
-          v-bind:xlink:href="'#' + link.id"
-          startOffset= "50%"
+          :xlink:href="'#' + link.id"
+          startOffset="50%"
         >
           {{ link.name }}
         </textPath>
@@ -89,13 +89,14 @@
     </g>
 
     <g
-      class="labels"
-      id="node-labels"
       v-if="nodeLabels"
+      id="node-labels"
+      class="labels"
     >
       <text 
-        class="node-label"
         v-for="node in nodes"
+        :key="node.id"
+        class="node-label"
         :x="node.x + (getNodeSize(node) / 2) + (fontSize / 2)"
         :y="node.y + labelOffset.y"
         :font-size="fontSize"
@@ -112,7 +113,7 @@
 import svgExport from '../lib/js/svgExport.js'
 
 export default {
-  name: 'svg-renderer',
+  name: 'SvgRenderer',
   props: [
     'size',
     'nodes',

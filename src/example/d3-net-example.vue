@@ -79,7 +79,7 @@ import D3NetExampleMenu from './Menu.vue'
 import Selection from './Selection.vue'
 import nodeIcon from '../assets/node.svg?raw'
 export default {
-  name: 'd3-net-example',
+  name: 'D3NetExample',
   components: {
     D3Network,
     D3NetExampleMenu,
@@ -122,17 +122,17 @@ export default {
     data.nodeSym = null
     return data
   },
+  computed: {
+    showSel () {
+      return true
+    }
+  },
   mounted () {
     this.options.size.w = this.$el.clientWidth
     this.options.size.h = this.$el.clientHeight
   },
   created () {
     this.reset()
-  },
-  computed: {
-    showSel () {
-      return true
-    }
   },
   methods: {
     linkCb (link) {

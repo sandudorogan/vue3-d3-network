@@ -1767,7 +1767,7 @@ var initialRadius = 10,
 
 // EXTERNAL MODULE: external {"commonjs":"vue","commonjs2":"vue","root":"Vue"}
 var external_commonjs_vue_commonjs2_vue_root_Vue_ = __webpack_require__(203);
-;// CONCATENATED MODULE: ./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/svgRenderer.vue?vue&type=template&id=056f92f2
+;// CONCATENATED MODULE: ./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/svgRenderer.vue?vue&type=template&id=92d7d208
 
 
 const _hoisted_1 = ["width", "height"]
@@ -1775,36 +1775,32 @@ const _hoisted_2 = {
   id: "l-links",
   class: "links"
 }
-const _hoisted_3 = ["d", "id", "onClick", "onTouchstartPassive"]
+const _hoisted_3 = ["id", "d", "onClick", "onTouchstartPassive"]
 const _hoisted_4 = {
   key: 0,
   id: "l-nodes",
   class: "nodes"
 }
-const _hoisted_5 = ["viewBox", "width", "height", "onClick", "onTouchendPassive", "onMousedown", "onTouchstart", "x", "y", "title", "innerHTML"]
-const _hoisted_6 = ["r", "onClick", "onTouchendPassive", "onMousedown", "onTouchstart", "cx", "cy", "title"]
+const _hoisted_5 = ["viewBox", "width", "height", "x", "y", "title", "onClick", "onTouchendPassive", "onMousedown", "onTouchstart", "innerHTML"]
+const _hoisted_6 = ["r", "cx", "cy", "title", "onClick", "onTouchendPassive", "onMousedown", "onTouchstart"]
 const _hoisted_7 = {
   key: 1,
-  class: "labels",
-  id: "link-labels"
+  id: "link-labels",
+  class: "labels"
 }
-const _hoisted_8 = {
-  class: "link-label",
-  fontSize: "fontSize"
-}
-const _hoisted_9 = ["xlink:href"]
-const _hoisted_10 = {
+const _hoisted_8 = ["xlink:href"]
+const _hoisted_9 = {
   key: 2,
-  class: "labels",
-  id: "node-labels"
+  id: "node-labels",
+  class: "labels"
 }
-const _hoisted_11 = ["x", "y", "font-size", "stroke-width"]
+const _hoisted_10 = ["x", "y", "font-size", "stroke-width"]
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   return ((0,external_commonjs_vue_commonjs2_vue_root_Vue_.openBlock)(), (0,external_commonjs_vue_commonjs2_vue_root_Vue_.createElementBlock)("svg", {
+    ref: "svg",
     xmlns: "http://www.w3.org/2000/svg",
     "xmlns:xlink": "http://www.w3.org/1999/xlink",
-    ref: "svg",
     width: $props.size.w,
     height: $props.size.h,
     class: "net-svg",
@@ -1814,15 +1810,16 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     (0,external_commonjs_vue_commonjs2_vue_root_Vue_.createElementVNode)("g", _hoisted_2, [
       ((0,external_commonjs_vue_commonjs2_vue_root_Vue_.openBlock)(true), (0,external_commonjs_vue_commonjs2_vue_root_Vue_.createElementBlock)(external_commonjs_vue_commonjs2_vue_root_Vue_.Fragment, null, (0,external_commonjs_vue_commonjs2_vue_root_Vue_.renderList)($props.links, (link) => {
         return ((0,external_commonjs_vue_commonjs2_vue_root_Vue_.openBlock)(), (0,external_commonjs_vue_commonjs2_vue_root_Vue_.createElementBlock)("path", (0,external_commonjs_vue_commonjs2_vue_root_Vue_.mergeProps)({
-          d: $options.linkPath(link),
+          key: link.id,
           id: link.id,
-          onClick: $event => ($options.emit('linkClick', [$event,link])),
-          onTouchstartPassive: $event => ($options.emit('linkClick', [$event,link]))
+          d: $options.linkPath(link)
         }, $options.linkAttrs(link), {
           class: $options.linkClass(link.id),
-          style: $options.linkStyle(link)
+          style: $options.linkStyle(link),
+          onClick: $event => ($options.emit('linkClick', [$event,link])),
+          onTouchstartPassive: $event => ($options.emit('linkClick', [$event,link]))
         }), null, 16, _hoisted_3))
-      }), 256))
+      }), 128))
     ]),
     (!$props.noNodes)
       ? ((0,external_commonjs_vue_commonjs2_vue_root_Vue_.openBlock)(), (0,external_commonjs_vue_commonjs2_vue_root_Vue_.createElementBlock)("g", _hoisted_4, [
@@ -1834,30 +1831,32 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
                     viewBox: $options.svgIcon(node).attrs.viewBox,
                     width: $options.getNodeSize(node, 'width'),
                     height: $options.getNodeSize(node, 'height'),
-                    onClick: $event => ($options.emit('nodeClick',[$event,node])),
-                    onTouchendPassive: $event => ($options.emit('nodeClick',[$event,node])),
-                    onMousedown: (0,external_commonjs_vue_commonjs2_vue_root_Vue_.withModifiers)($event => ($options.emit('dragStart',[$event,key])), ["prevent"]),
-                    onTouchstart: (0,external_commonjs_vue_commonjs2_vue_root_Vue_.withModifiers)($event => ($options.emit('dragStart',[$event,key])), ["prevent"]),
                     x: node.x - $options.getNodeSize(node, 'width') / 2,
                     y: node.y - $options.getNodeSize(node, 'height') / 2,
                     style: $options.nodeStyle(node),
                     title: node.name,
-                    class: $options.nodeClass(node,['node-svg']),
-                    innerHTML: $options.svgIcon(node).data
-                  }, node._svgAttrs), null, 16, _hoisted_5))
-                : ((0,external_commonjs_vue_commonjs2_vue_root_Vue_.openBlock)(), (0,external_commonjs_vue_commonjs2_vue_root_Vue_.createElementBlock)("circle", (0,external_commonjs_vue_commonjs2_vue_root_Vue_.mergeProps)({
-                    key: 1,
-                    r: $options.getNodeSize(node) / 2,
+                    class: $options.nodeClass(node,['node-svg'])
+                  }, node._svgAttrs, {
                     onClick: $event => ($options.emit('nodeClick',[$event,node])),
                     onTouchendPassive: $event => ($options.emit('nodeClick',[$event,node])),
                     onMousedown: (0,external_commonjs_vue_commonjs2_vue_root_Vue_.withModifiers)($event => ($options.emit('dragStart',[$event,key])), ["prevent"]),
                     onTouchstart: (0,external_commonjs_vue_commonjs2_vue_root_Vue_.withModifiers)($event => ($options.emit('dragStart',[$event,key])), ["prevent"]),
+                    innerHTML: $options.svgIcon(node).data
+                  }), null, 16, _hoisted_5))
+                : ((0,external_commonjs_vue_commonjs2_vue_root_Vue_.openBlock)(), (0,external_commonjs_vue_commonjs2_vue_root_Vue_.createElementBlock)("circle", (0,external_commonjs_vue_commonjs2_vue_root_Vue_.mergeProps)({
+                    key: 1,
+                    r: $options.getNodeSize(node) / 2,
                     cx: node.x,
                     cy: node.y,
                     style: $options.nodeStyle(node),
                     title: node.name,
                     class: $options.nodeClass(node)
-                  }, node._svgAttrs), null, 16, _hoisted_6))
+                  }, node._svgAttrs, {
+                    onClick: $event => ($options.emit('nodeClick',[$event,node])),
+                    onTouchendPassive: $event => ($options.emit('nodeClick',[$event,node])),
+                    onMousedown: (0,external_commonjs_vue_commonjs2_vue_root_Vue_.withModifiers)($event => ($options.emit('dragStart',[$event,key])), ["prevent"]),
+                    onTouchstart: (0,external_commonjs_vue_commonjs2_vue_root_Vue_.withModifiers)($event => ($options.emit('dragStart',[$event,key])), ["prevent"])
+                  }), null, 16, _hoisted_6))
             ], 64))
           }), 128))
         ]))
@@ -1865,31 +1864,36 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     ($props.linkLabels)
       ? ((0,external_commonjs_vue_commonjs2_vue_root_Vue_.openBlock)(), (0,external_commonjs_vue_commonjs2_vue_root_Vue_.createElementBlock)("g", _hoisted_7, [
           ((0,external_commonjs_vue_commonjs2_vue_root_Vue_.openBlock)(true), (0,external_commonjs_vue_commonjs2_vue_root_Vue_.createElementBlock)(external_commonjs_vue_commonjs2_vue_root_Vue_.Fragment, null, (0,external_commonjs_vue_commonjs2_vue_root_Vue_.renderList)($props.links, (link) => {
-            return ((0,external_commonjs_vue_commonjs2_vue_root_Vue_.openBlock)(), (0,external_commonjs_vue_commonjs2_vue_root_Vue_.createElementBlock)("text", _hoisted_8, [
+            return ((0,external_commonjs_vue_commonjs2_vue_root_Vue_.openBlock)(), (0,external_commonjs_vue_commonjs2_vue_root_Vue_.createElementBlock)("text", {
+              key: link.id,
+              class: "link-label",
+              fontSize: "fontSize"
+            }, [
               (0,external_commonjs_vue_commonjs2_vue_root_Vue_.createElementVNode)("textPath", {
                 "xlink:href": '#' + link.id,
                 startOffset: "50%"
-              }, (0,external_commonjs_vue_commonjs2_vue_root_Vue_.toDisplayString)(link.name), 9, _hoisted_9)
+              }, (0,external_commonjs_vue_commonjs2_vue_root_Vue_.toDisplayString)(link.name), 9, _hoisted_8)
             ]))
-          }), 256))
+          }), 128))
         ]))
       : (0,external_commonjs_vue_commonjs2_vue_root_Vue_.createCommentVNode)("", true),
     ($props.nodeLabels)
-      ? ((0,external_commonjs_vue_commonjs2_vue_root_Vue_.openBlock)(), (0,external_commonjs_vue_commonjs2_vue_root_Vue_.createElementBlock)("g", _hoisted_10, [
+      ? ((0,external_commonjs_vue_commonjs2_vue_root_Vue_.openBlock)(), (0,external_commonjs_vue_commonjs2_vue_root_Vue_.createElementBlock)("g", _hoisted_9, [
           ((0,external_commonjs_vue_commonjs2_vue_root_Vue_.openBlock)(true), (0,external_commonjs_vue_commonjs2_vue_root_Vue_.createElementBlock)(external_commonjs_vue_commonjs2_vue_root_Vue_.Fragment, null, (0,external_commonjs_vue_commonjs2_vue_root_Vue_.renderList)($props.nodes, (node) => {
             return ((0,external_commonjs_vue_commonjs2_vue_root_Vue_.openBlock)(), (0,external_commonjs_vue_commonjs2_vue_root_Vue_.createElementBlock)("text", {
+              key: node.id,
               class: (0,external_commonjs_vue_commonjs2_vue_root_Vue_.normalizeClass)(["node-label", (node._labelClass) ? node._labelClass : '']),
               x: node.x + ($options.getNodeSize(node) / 2) + ($props.fontSize / 2),
               y: node.y + $props.labelOffset.y,
               "font-size": $props.fontSize,
               "stroke-width": $props.fontSize / 8
-            }, (0,external_commonjs_vue_commonjs2_vue_root_Vue_.toDisplayString)(node.name), 11, _hoisted_11))
-          }), 256))
+            }, (0,external_commonjs_vue_commonjs2_vue_root_Vue_.toDisplayString)(node.name), 11, _hoisted_10))
+          }), 128))
         ]))
       : (0,external_commonjs_vue_commonjs2_vue_root_Vue_.createCommentVNode)("", true)
   ], 40, _hoisted_1))
 }
-;// CONCATENATED MODULE: ./src/components/svgRenderer.vue?vue&type=template&id=056f92f2
+;// CONCATENATED MODULE: ./src/components/svgRenderer.vue?vue&type=template&id=92d7d208
 
 ;// CONCATENATED MODULE: ./src/lib/js/svgExport.js
 /* eslint-disable */
@@ -2042,7 +2046,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 
 
 /* harmony default export */ var svgRenderervue_type_script_lang_js = ({
-  name: 'svg-renderer',
+  name: 'SvgRenderer',
   props: [
     'size',
     'nodes',
@@ -2171,12 +2175,12 @@ var exportHelper = __webpack_require__(744);
 const __exports__ = /*#__PURE__*/(0,exportHelper/* default */.Z)(svgRenderervue_type_script_lang_js, [['render',render]])
 
 /* harmony default export */ var svgRenderer = (__exports__);
-;// CONCATENATED MODULE: ./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/canvasRenderer.vue?vue&type=template&id=2becc798
+;// CONCATENATED MODULE: ./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/canvasRenderer.vue?vue&type=template&id=7990388d
 
 
-const canvasRenderervue_type_template_id_2becc798_hoisted_1 = ["width", "height"]
+const canvasRenderervue_type_template_id_7990388d_hoisted_1 = ["width", "height"]
 
-function canvasRenderervue_type_template_id_2becc798_render(_ctx, _cache, $props, $setup, $data, $options) {
+function canvasRenderervue_type_template_id_7990388d_render(_ctx, _cache, $props, $setup, $data, $options) {
   const _directive_render_canvas = (0,external_commonjs_vue_commonjs2_vue_root_Vue_.resolveDirective)("render-canvas")
 
   return (0,external_commonjs_vue_commonjs2_vue_root_Vue_.withDirectives)(((0,external_commonjs_vue_commonjs2_vue_root_Vue_.openBlock)(), (0,external_commonjs_vue_commonjs2_vue_root_Vue_.createElementBlock)("canvas", {
@@ -2189,11 +2193,11 @@ function canvasRenderervue_type_template_id_2becc798_render(_ctx, _cache, $props
     onMousedown: _cache[1] || (_cache[1] = (0,external_commonjs_vue_commonjs2_vue_root_Vue_.withModifiers)((...args) => ($options.canvasClick && $options.canvasClick(...args)), ["prevent"])),
     onTouchstart: _cache[2] || (_cache[2] = (0,external_commonjs_vue_commonjs2_vue_root_Vue_.withModifiers)((...args) => ($options.canvasClick && $options.canvasClick(...args)), ["prevent"])),
     onTouchendPassive: _cache[3] || (_cache[3] = (...args) => ($options.canvasClick && $options.canvasClick(...args)))
-  }, null, 44, canvasRenderervue_type_template_id_2becc798_hoisted_1)), [
+  }, null, 44, canvasRenderervue_type_template_id_7990388d_hoisted_1)), [
     [_directive_render_canvas, {links: $props.links, nodes: $props.nodes}]
   ])
 }
-;// CONCATENATED MODULE: ./src/components/canvasRenderer.vue?vue&type=template&id=2becc798
+;// CONCATENATED MODULE: ./src/components/canvasRenderer.vue?vue&type=template&id=7990388d
 
 ;// CONCATENATED MODULE: ./src/lib/js/canvasStyles.js
 /**
@@ -2339,7 +2343,16 @@ function canvasRenderervue_type_template_id_2becc798_render(_ctx, _cache, $props
 
 
 /* harmony default export */ var canvasRenderervue_type_script_lang_js = ({
-  name: 'canvas-renderer',
+  name: 'CanvasRenderer',
+  directives: {
+    renderCanvas: {
+      mounted (canvas, data, vnode) {
+        let nodes = data.value.nodes
+        let links = data.value.links
+        vnode.context.draw(nodes, links, canvas)
+      }
+    }
+  },
   props: [
     'size',
     'offset',
@@ -2380,13 +2393,12 @@ function canvasRenderervue_type_template_id_2becc798_render(_ctx, _cache, $props
       return { left, top }
     }
   },
-  directives: {
-    renderCanvas: {
-      mounted (canvas, data, vnode) {
-        let nodes = data.value.nodes
-        let links = data.value.links
-        vnode.context.draw(nodes, links, canvas)
-      }
+  watch: {
+    nodeSize () {
+      this.resetSprites()
+    },
+    canvasStyles () {
+      this.resetSprites()
     }
   },
   created () {
@@ -2402,14 +2414,6 @@ function canvasRenderervue_type_template_id_2becc798_render(_ctx, _cache, $props
       vm.hitCanvas.width = vm.size.w
       vm.hitCanvas.height = vm.size.h
     })
-  },
-  watch: {
-    nodeSize () {
-      this.resetSprites()
-    },
-    canvasStyles () {
-      this.resetSprites()
-    }
   },
   methods: {
     //  canvas to png
@@ -2771,10 +2775,10 @@ function canvasRenderervue_type_template_id_2becc798_render(_ctx, _cache, $props
 
 ;// CONCATENATED MODULE: ./src/components/canvasRenderer.vue?vue&type=script&lang=js
  
-;// CONCATENATED MODULE: ./node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-81.use[0]!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-81.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-81.use[2]!./node_modules/stylus-loader/index.js??clonedRuleSet-81.use[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/canvasRenderer.vue?vue&type=style&index=0&id=2becc798&lang=stylus
+;// CONCATENATED MODULE: ./node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-81.use[0]!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-81.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-81.use[2]!./node_modules/stylus-loader/index.js??clonedRuleSet-81.use[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/canvasRenderer.vue?vue&type=style&index=0&id=7990388d&lang=stylus
 // extracted by mini-css-extract-plugin
 
-;// CONCATENATED MODULE: ./src/components/canvasRenderer.vue?vue&type=style&index=0&id=2becc798&lang=stylus
+;// CONCATENATED MODULE: ./src/components/canvasRenderer.vue?vue&type=style&index=0&id=7990388d&lang=stylus
 
 ;// CONCATENATED MODULE: ./src/components/canvasRenderer.vue
 
@@ -2784,7 +2788,7 @@ function canvasRenderervue_type_template_id_2becc798_render(_ctx, _cache, $props
 ;
 
 
-const canvasRenderer_exports_ = /*#__PURE__*/(0,exportHelper/* default */.Z)(canvasRenderervue_type_script_lang_js, [['render',canvasRenderervue_type_template_id_2becc798_render]])
+const canvasRenderer_exports_ = /*#__PURE__*/(0,exportHelper/* default */.Z)(canvasRenderervue_type_script_lang_js, [['render',canvasRenderervue_type_template_id_7990388d_render]])
 
 /* harmony default export */ var canvasRenderer = (canvasRenderer_exports_);
 ;// CONCATENATED MODULE: ./src/lib/js/saveImage.js
@@ -2829,7 +2833,7 @@ const canvasRenderer_exports_ = /*#__PURE__*/(0,exportHelper/* default */.Z)(can
 const d3 = Object.assign({}, d3_force_src_namespaceObject)
 
 /* harmony default export */ var vue_d3_networkvue_type_script_lang_js = ({
-  name: 'd3-network',
+  name: 'D3Network',
   components: {
     canvasRenderer: canvasRenderer,
     svgRenderer: svgRenderer
@@ -2869,6 +2873,7 @@ const d3 = Object.assign({}, d3_force_src_namespaceObject)
       }
     }
   },
+  emits: ['node-click', 'link-click'],
   data () {
     return {
       canvas: false,
@@ -2915,67 +2920,6 @@ const d3 = Object.assign({}, d3_force_src_namespaceObject)
       resizeListener: true
     }
   },
-  render () {
-    let ref = 'svg'
-    let props = {}
-    let renderer = svgRenderer
-    let bindProps = [
-      'size',
-      'nodes',
-      'links',
-      'selected',
-      'linksSelected',
-      'strLinks',
-      'linkWidth',
-      'nodeLabels',
-      'linkLabels',
-      'fontSize',
-      'labelOffset',
-      'offset',
-      'padding',
-      'nodeSize',
-      'noNodes'
-    ]
-
-    for (let prop of bindProps) {
-      props[prop] = this[prop]
-    }
-    props.nodeSym = this.nodeSvg
-
-    if (this.canvas) {
-      renderer = canvasRenderer
-      ref = 'canvas'
-      props.canvasStyles = this.options.canvasStyles
-    }
-
-    return (0,external_commonjs_vue_commonjs2_vue_root_Vue_.h)(
-      'div', {
-        class: ['net'],
-        onMousemove: this.move,
-        onTouchmove: this.move 
-      }, [(0,external_commonjs_vue_commonjs2_vue_root_Vue_.h)(
-        renderer, {
-          ...props, ref, onAction: this.methodCall
-        }
-      )]
-    )
-  },
-  created () {
-    this.updateOptions(this.options)
-    this.buildNodes(this.netNodes)
-    this.links = this.buildLinks(this.netLinks)
-    this.updateNodeSvg()
-  },
-  mounted () {
-    this.onResize()
-    this.$nextTick(() => {
-      this.animate()
-    })
-    if (this.resizeListener) window.addEventListener('resize', this.onResize)
-  },
-  beforeUnmount () {
-    if (this.resizeListener) window.removeEventListener('resize', this.onResize)
-  },
   computed: {
     selected () {
       return this.selection.nodes
@@ -2996,7 +2940,6 @@ const d3 = Object.assign({}, d3_force_src_namespaceObject)
       }
     }
   },
-  emits: ['node-click', 'link-click'],
   watch: {
     netNodes (newValue) {
       this.buildNodes(newValue)
@@ -3018,6 +2961,22 @@ const d3 = Object.assign({}, d3_force_src_namespaceObject)
       }
       this.animate()
     }
+  },
+  created () {
+    this.updateOptions(this.options)
+    this.buildNodes(this.netNodes)
+    this.links = this.buildLinks(this.netLinks)
+    this.updateNodeSvg()
+  },
+  mounted () {
+    this.onResize()
+    this.$nextTick(() => {
+      this.animate()
+    })
+    if (this.resizeListener) window.addEventListener('resize', this.onResize)
+  },
+  beforeUnmount () {
+    if (this.resizeListener) window.removeEventListener('resize', this.onResize)
   },
   methods: {
     updateNodeSvg () {
@@ -3221,15 +3180,60 @@ const d3 = Object.assign({}, d3_force_src_namespaceObject)
         this.$emit('screen-shot', err)
       }, ...args)
     }
+  },
+  render () {
+    let ref = 'svg'
+    let props = {}
+    let renderer = svgRenderer
+    let bindProps = [
+      'size',
+      'nodes',
+      'links',
+      'selected',
+      'linksSelected',
+      'strLinks',
+      'linkWidth',
+      'nodeLabels',
+      'linkLabels',
+      'fontSize',
+      'labelOffset',
+      'offset',
+      'padding',
+      'nodeSize',
+      'noNodes'
+    ]
+
+    for (let prop of bindProps) {
+      props[prop] = this[prop]
+    }
+    props.nodeSym = this.nodeSvg
+
+    if (this.canvas) {
+      renderer = canvasRenderer
+      ref = 'canvas'
+      props.canvasStyles = this.options.canvasStyles
+    }
+
+    return (0,external_commonjs_vue_commonjs2_vue_root_Vue_.h)(
+      'div', {
+        class: ['net'],
+        onMousemove: this.move,
+        onTouchmove: this.move 
+      }, [(0,external_commonjs_vue_commonjs2_vue_root_Vue_.h)(
+        renderer, {
+          ...props, ref, onAction: this.methodCall
+        }
+      )]
+    )
   }
 });
 
 ;// CONCATENATED MODULE: ./src/vue-d3-network.vue?vue&type=script&lang=js
  
-;// CONCATENATED MODULE: ./node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-81.use[0]!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-81.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-81.use[2]!./node_modules/stylus-loader/index.js??clonedRuleSet-81.use[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/vue-d3-network.vue?vue&type=style&index=0&id=63a72836&lang=stylus
+;// CONCATENATED MODULE: ./node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-81.use[0]!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-81.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-81.use[2]!./node_modules/stylus-loader/index.js??clonedRuleSet-81.use[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/vue-d3-network.vue?vue&type=style&index=0&id=03359a54&lang=stylus
 // extracted by mini-css-extract-plugin
 
-;// CONCATENATED MODULE: ./src/vue-d3-network.vue?vue&type=style&index=0&id=63a72836&lang=stylus
+;// CONCATENATED MODULE: ./src/vue-d3-network.vue?vue&type=style&index=0&id=03359a54&lang=stylus
 
 ;// CONCATENATED MODULE: ./src/vue-d3-network.vue
 

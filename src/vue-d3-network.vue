@@ -8,7 +8,7 @@ import { h } from 'vue'
 const d3 = Object.assign({}, forceSimulation)
 
 export default {
-  name: 'd3-network',
+  name: 'D3Network',
   components: {
     canvasRenderer,
     svgRenderer
@@ -48,6 +48,7 @@ export default {
       }
     }
   },
+  emits: ['node-click', 'link-click'],
   data () {
     return {
       canvas: false,
@@ -94,67 +95,6 @@ export default {
       resizeListener: true
     }
   },
-  render () {
-    let ref = 'svg'
-    let props = {}
-    let renderer = svgRenderer
-    let bindProps = [
-      'size',
-      'nodes',
-      'links',
-      'selected',
-      'linksSelected',
-      'strLinks',
-      'linkWidth',
-      'nodeLabels',
-      'linkLabels',
-      'fontSize',
-      'labelOffset',
-      'offset',
-      'padding',
-      'nodeSize',
-      'noNodes'
-    ]
-
-    for (let prop of bindProps) {
-      props[prop] = this[prop]
-    }
-    props.nodeSym = this.nodeSvg
-
-    if (this.canvas) {
-      renderer = canvasRenderer
-      ref = 'canvas'
-      props.canvasStyles = this.options.canvasStyles
-    }
-
-    return h(
-      'div', {
-        class: ['net'],
-        onMousemove: this.move,
-        onTouchmove: this.move 
-      }, [h(
-        renderer, {
-          ...props, ref, onAction: this.methodCall
-        }
-      )]
-    )
-  },
-  created () {
-    this.updateOptions(this.options)
-    this.buildNodes(this.netNodes)
-    this.links = this.buildLinks(this.netLinks)
-    this.updateNodeSvg()
-  },
-  mounted () {
-    this.onResize()
-    this.$nextTick(() => {
-      this.animate()
-    })
-    if (this.resizeListener) window.addEventListener('resize', this.onResize)
-  },
-  beforeUnmount () {
-    if (this.resizeListener) window.removeEventListener('resize', this.onResize)
-  },
   computed: {
     selected () {
       return this.selection.nodes
@@ -175,7 +115,6 @@ export default {
       }
     }
   },
-  emits: ['node-click', 'link-click'],
   watch: {
     netNodes (newValue) {
       this.buildNodes(newValue)
@@ -197,6 +136,22 @@ export default {
       }
       this.animate()
     }
+  },
+  created () {
+    this.updateOptions(this.options)
+    this.buildNodes(this.netNodes)
+    this.links = this.buildLinks(this.netLinks)
+    this.updateNodeSvg()
+  },
+  mounted () {
+    this.onResize()
+    this.$nextTick(() => {
+      this.animate()
+    })
+    if (this.resizeListener) window.addEventListener('resize', this.onResize)
+  },
+  beforeUnmount () {
+    if (this.resizeListener) window.removeEventListener('resize', this.onResize)
   },
   methods: {
     updateNodeSvg () {
@@ -400,6 +355,51 @@ export default {
         this.$emit('screen-shot', err)
       }, ...args)
     }
+  },
+  render () {
+    let ref = 'svg'
+    let props = {}
+    let renderer = svgRenderer
+    let bindProps = [
+      'size',
+      'nodes',
+      'links',
+      'selected',
+      'linksSelected',
+      'strLinks',
+      'linkWidth',
+      'nodeLabels',
+      'linkLabels',
+      'fontSize',
+      'labelOffset',
+      'offset',
+      'padding',
+      'nodeSize',
+      'noNodes'
+    ]
+
+    for (let prop of bindProps) {
+      props[prop] = this[prop]
+    }
+    props.nodeSym = this.nodeSvg
+
+    if (this.canvas) {
+      renderer = canvasRenderer
+      ref = 'canvas'
+      props.canvasStyles = this.options.canvasStyles
+    }
+
+    return h(
+      'div', {
+        class: ['net'],
+        onMousemove: this.move,
+        onTouchmove: this.move 
+      }, [h(
+        renderer, {
+          ...props, ref, onAction: this.methodCall
+        }
+      )]
+    )
   }
 }
 </script>
