@@ -177,8 +177,8 @@ export default {
       // serach offsets of parents
       let vm = this
       while (vm.$parent) {
-        this.padding.x += vm.$el.offsetLeft || 0
-        this.padding.y += vm.$el.offsetTop || 0
+        this.padding.x += vm.$el?.offsetLeft || 0
+        this.padding.y += vm.$el?.offsetTop || 0
         vm = vm.$parent
       }
       this.animate()
@@ -199,7 +199,7 @@ export default {
         if (!node.id && node.id !== 0) node.id = index
         // initialize node coords
         if (!node.x) node.x = 0
-        if (!node.y) node.y = 0 
+        if (!node.y) node.y = 0
         // node default name, allow string 0 as name
         if (!node.name && node.name !== '0') node.name = 'node ' + node.id
         if (node.svgSym) {
@@ -393,7 +393,7 @@ export default {
       'div', {
         class: ['net'],
         onMousemove: this.move,
-        onTouchmove: this.move 
+        onTouchmove: this.move
       }, [h(
         renderer, {
           ...props, ref, onAction: this.methodCall
