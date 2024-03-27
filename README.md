@@ -10,11 +10,16 @@
 
 ## Warning
 
-This version has been thoroughly tested and is in active use in a production env of a Nuxt 3 project. 
-BUT only the SVG graph with touch support & nodes selection. 
-The screenshot feature has not been tested. Neither the canvas. Nor any of the tests have been updated.
-Linter fails (event though it shouldn't) - but again, no time has been spent on it. 
-This is the result of us having to ship Nuxt 3 upgrade on a deadline.
+This fork has been created to make the original package compatible with Vue 3.
+Part of the fork has been thoroughly tested and is in active use 
+in production of a Nuxt 3 project. 
+But *only* the SVG graph with touch support & nodes selection work without fail! 
+The screenshot feature has not been tested, neither was the canvas! 
+Nor any of the tests have been updated!
+Linter fails (event though it shouldn't) - no time has been spent on it. 
+This is the result of us having to ship a Nuxt 2 to Nuxt 3 upgrade on a deadline.
+
+The rest of this Readme is the original one from the Vue 2 version.
 
 ## Demo
 
