@@ -4,10 +4,10 @@ import svgRenderer from './components/svgRenderer.vue'
 import canvasRenderer from './components/canvasRenderer.vue'
 import saveImage from './lib/js/saveImage.js'
 import svgExport from './lib/js/svgExport.js'
-import { h } from 'vue'
+import { h, defineComponent } from 'vue'
 const d3 = Object.assign({}, forceSimulation)
 
-export default {
+export default defineComponent({
   name: 'D3Network',
   components: {
     canvasRenderer,
@@ -48,7 +48,7 @@ export default {
       }
     }
   },
-  emits: ['node-click', 'link-click'],
+  emits: ['node-click', 'link-click', 'screen-shot'],
   data () {
     return {
       canvas: false,
@@ -174,12 +174,12 @@ export default {
       if (!size || !size.h) this.size.h = this.$el.clientHeight
       this.padding.x = 0
       this.padding.y = 0
-      // serach offsets of parents
-      let vm = this
-      while (vm.$parent) {
-        this.padding.x += vm.$el?.offsetLeft || 0
-        this.padding.y += vm.$el?.offsetTop || 0
-        vm = vm.$parent
+      // search offsets of parents
+      let el = this.$el
+      while (el.parentElement) {
+        this.padding.x += el.offsetLeft || 0
+        this.padding.y += el.offsetTop || 0
+        el = el.parentElement
       }
       this.animate()
     },
@@ -204,7 +204,9 @@ export default {
         if (!node.name && node.name !== '0') node.name = 'node ' + node.id
         if (node.svgSym) {
           node.svgIcon = svgExport.svgElFromString(node.svgSym)
-          if (!this.canvas && node.svgIcon && !node.svgObj) node.svgObj = svgExport.toObject(node.svgIcon)
+          if (!this.canvas && node.svgIcon && !node.svgObj) {
+            node.svgObj = svgExport.toObject(node.svgIcon)
+          }
         }
         return node
       })
@@ -401,7 +403,7 @@ export default {
       )]
     )
   }
-}
+})
 </script>
 
 <style lang="stylus">

@@ -24,9 +24,11 @@
         strong {{ Object.keys(links).length }}
 </template>
 <script>
-export default {
+import { defineComponent } from 'vue'
+export default defineComponent({
   name: 'D3NetSelection',
   props: ['data'],
+  emits: ['action'],
   computed: {
     links () {
       return this.data.links
@@ -40,7 +42,7 @@ export default {
       this.$emit('action', action, args)
     }
   }
-}
+})
 </script>
 <style lang="stylus">
 @import '../lib/styl/vars.styl'

@@ -4,11 +4,18 @@
       li
         label Nodes:
           span {{ setts.maxNodes }}
-        input(type="range" v-model.number="setts.maxNodes" @input="change" min="1" :max='(opts.canvas) ? 3000: 1010' step="10")
+        input(
+          type="range" v-model.number="setts.maxNodes"
+          @input="change" min="1"
+          :max='(opts.canvas) ? 3000: 1010' step="10"
+        )
       li
         label Max Links per Node:
           span {{ setts.maxLinks }}
-        input(type="range" v-model.number="setts.maxLinks" @input="change" min="1" max="10" step="1")
+        input(
+          type="range" v-model.number="setts.maxLinks"
+          @input="change" min="1" max="10" step="1"
+        )
       li
         label Render type
       li
@@ -27,11 +34,17 @@
       li
         label Offset X:
           span {{ opts.offset.x }}
-        input(type="range" v-model.number="opts.offset.x" @input="change" min="-1000" max="1000" step="1")
+        input(
+          type="range" v-model.number="opts.offset.x"
+          @input="change" min="-1000" max="1000" step="1"
+        )
       li
         label Offset Y:
           span {{ opts.offset.y }}
-        input(type="range" v-model.number="opts.offset.y" @input="change" min="-1000" max="1000" step="1")
+        input(
+          type="range" v-model.number="opts.offset.y"
+          @input="change" min="-1000" max="1000" step="1"
+        )
       li
         input(type="checkbox" v-model="opts.icon" @change="change")
         label Node Sprite
@@ -40,11 +53,17 @@
       li
         label Node Size:
           span {{ opts.nodeSize }}
-        input(type="range" v-model.number="opts.nodeSize" @input="change" min="3" max="100" step="1")
+        input(
+          type="range" v-model.number="opts.nodeSize"
+          @input="change" min="3" max="100" step="1"
+        )
       li
         label Link Thickness:
           span {{ opts.linkWidth }}
-        input(type="range" v-model.number="opts.linkWidth" @input="change" min="1" max="15" step="1")
+        input(
+          type="range" v-model.number="opts.linkWidth"
+          @input="change" min="1" max="15" step="1"
+        )
       li
         input(type="checkbox" v-model="opts.nodeLabels" @change="change")
         label Show node names
@@ -68,9 +87,11 @@
 </template>
 <script>
 import defaultData from './data.js'
-export default {
+import { defineComponent } from 'vue'
+export default defineComponent({
   name: 'D3NetExampleMenu',
   props: ['links', 'nodes', 'settings', 'options'],
+  emits: ['options', 'simulate', 'reset'],
   data () {
     let data = Object.assign({}, defaultData)
     return {
@@ -90,15 +111,15 @@ export default {
     },
     reset () {
       this.opts = Object.assign({}, defaultData.options)
-      this.options.width = this.$el.clientWidth
-      this.options.height = this.$el.clientHeight
-      this.$emit('reset', this.options)
+      this.opts.width = this.$el.clientWidth
+      this.opts.height = this.$el.clientHeight
+      this.$emit('reset', this.opts)
     },
     emit (e) {
       this.$emit(e)
     }
   }
-}
+})
 </script>
 <style src="../assets/css/icons.css"></style>
 <style lang="stylus" scoped>

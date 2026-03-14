@@ -111,9 +111,11 @@
 
 <script>
 import svgExport from '../lib/js/svgExport.js'
+import { defineComponent } from 'vue'
 
-export default {
+export default defineComponent({
   name: 'SvgRenderer',
+  emits: ['action'],
   props: [
     'size',
     'nodes',
@@ -204,14 +206,14 @@ export default {
       return cssClass
     },
     searchBackground () {
-      let vm = this
-      while (vm.$parent) {
-        let style = window.getComputedStyle(vm.$el)
+      let el = this.$el
+      while (el.parentElement) {
+        let style = window.getComputedStyle(el)
         let background = style.getPropertyValue('background-color')
         let rgb = background.replace(/[^\d,]/g, '').split(',')
         let sum = rgb.reduce((a, b) => parseInt(a) + parseInt(b), 0)
         if (sum > 0) return background
-        vm = vm.$parent
+        el = el.parentElement
       }
       return 'white'
     },
@@ -227,5 +229,5 @@ export default {
       return attrs
     }
   }
-}
+})
 </script>

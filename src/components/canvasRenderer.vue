@@ -16,17 +16,24 @@
 import canvasStyles from '../lib/js/canvasStyles.js'
 import stylePicker from '../lib/js/stylePicker.js'
 import svgExport from '../lib/js/svgExport.js'
-export default {
+import { defineComponent } from 'vue'
+export default defineComponent({
   name: 'CanvasRenderer',
   directives: {
     renderCanvas: {
-      mounted (canvas, data, vnode) {
-        let nodes = data.value.nodes
-        let links = data.value.links
-        vnode.context.draw(nodes, links, canvas)
+      mounted (canvas, binding) {
+        let nodes = binding.value.nodes
+        let links = binding.value.links
+        binding.instance.draw(nodes, links, canvas)
+      },
+      updated (canvas, binding) {
+        let nodes = binding.value.nodes
+        let links = binding.value.links
+        binding.instance.draw(nodes, links, canvas)
       }
     }
   },
+  emits: ['action'],
   props: [
     'size',
     'offset',
@@ -277,7 +284,11 @@ export default {
       let canvas = this.spriteCanvas(canvasSize)
       let ctx = canvas.getContext('2d')
       if (this.nodeSvg) {
-        let attrs = { width: size, height: size, class: style._cssClass || '', style: style._cssStyle || '' }
+        let attrs = {
+          width: size, height: size,
+          class: style._cssClass || '',
+          style: style._cssStyle || ''
+        }
         let url = svgExport.svgDataToUrl(this.nodeSvg, attrs)
         if (url) {
           let img = new Image()
@@ -445,7 +456,7 @@ export default {
       return style
     }
   }
-}
+})
 </script>
 <style lang="stylus">
   canvas

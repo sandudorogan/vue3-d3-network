@@ -18,8 +18,9 @@
 <script>
 import ghIcon from '../assets/github.svg?raw'
 import d3NetExample from './d3-net-example.vue'
+import { defineComponent } from 'vue'
 
-export default {
+export default defineComponent({
   name: 'Example',
   components: {
     d3NetExample
@@ -32,7 +33,7 @@ export default {
       app: process.env.APP
     }
   }
-}
+})
 </script>
 <style lang="stylus">
 @import '../lib/styl/vars.styl'

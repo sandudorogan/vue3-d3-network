@@ -2,24 +2,29 @@
 
 [![GitHub issues](https://img.shields.io/github/issues/emiliorizzo/vue-d3-network.svg)](https://github.com/emiliorizzo/vue-d3-network/issues) [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/emiliorizzo/vue-d3-network/master/LICENSE) [![npm](https://img.shields.io/npm/v/vue-d3-network.svg)](https://www.npmjs.com/package/vue3-d3-network)
 
-# vue-d3-network on Vue 3 (alpha)
+# vue-d3-network on Vue 3
 
-> Vue component to graph networks using d3-force
+> Vue 3 component to graph networks using d3-force
 
 ![vue d3 network](vue-d3-network.png)
 
-## Warning
+## About this fork
 
-This fork has been created to make the original package compatible with Vue 3.
-Part of the fork has been thoroughly tested and is in active use 
-in production of a Nuxt 3 project. 
-But *only* the SVG graph with touch support & nodes selection work without fail! 
-The screenshot feature has not been tested, neither was the canvas! 
-Nor any of the tests have been updated!
-Linter fails (event though it shouldn't) - no time has been spent on it. 
-This is the result of us having to ship a Nuxt 2 to Nuxt 3 upgrade on a deadline.
+This fork migrates the original
+[vue-d3-network](https://github.com/emiliorizzo/vue-d3-network)
+package from Vue 2 to Vue 3. The migration covers:
 
-The rest of this Readme is the original one from the Vue 2 version.
+- Vue 3 `createApp` entry point (replaces `new Vue()`)
+- All components wrapped in `defineComponent()`
+- `emits` declared on every component
+- Custom directives updated to Vue 3 API
+  (`binding.instance` instead of `vnode.context`)
+- `$parent` traversal replaced with DOM `parentElement` traversal
+- `$set` calls removed (unnecessary with Vue 3 Proxy reactivity)
+- ESLint configured and passing with `plugin:vue/vue3-recommended`
+
+Both SVG and Canvas renderers are included and build
+correctly. Tests have not yet been added.
 
 ## Demo
 
@@ -50,22 +55,23 @@ yarn add vue3-d3-network
 
 ```
 
-``` javascript  
-import D3Network from 'vue-d3-network'
+``` javascript
+import D3Network from 'vue3-d3-network'
+export default {
   components: {
     D3Network
   }
+}
 ```
 
 ``` html
 
-<style src="vue-d3-network/dist/vue-d3-network.css"></style>
+<style src="vue3-d3-network/dist/vue-d3-network.css"></style>
 
 ```
 
-  Or: *import source component from:* 'vue-d3-network/src/vue-d3-network.vue'
+  Or: *import source component from:* 'vue3-d3-network/src/vue-d3-network.vue'
   *And install devDependencies.* (d3-force, stylus and pug)
-  See: [package.json](https://github.com/emiliorizzo/vue-d3-network/blob/master/package.json))
 
 ## Props
 
