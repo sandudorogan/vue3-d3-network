@@ -176,7 +176,10 @@ export default defineComponent({
       this.$el.className = cursorClass
     },
     updateSelection () {
-      this.showSelection = (Object.keys(this.selected).length | Object.keys(this.linksSelected).length)
+      this.showSelection = (
+        Object.keys(this.selected).length |
+        Object.keys(this.linksSelected).length
+      )
     },
     reset () {
       this.selected = {}

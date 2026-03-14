@@ -8,7 +8,7 @@
     "dev": "vue-cli-service serve",
     "build": "npm run build-component && npm run clean-dist",
     "build-component": "vue-cli-service build --target lib --name vue-d3-network src/vue-d3-network.vue",
-    "lint": "vue-cli-service lint",
+    "lint": "eslint --ext .js,.vue src/",
     "clean-dist": "rm dist/demo.html"
   },
   "author": "emi",

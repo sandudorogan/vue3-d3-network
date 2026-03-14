@@ -2158,12 +2158,12 @@ var exportHelper = __webpack_require__(744);
 const __exports__ = /*#__PURE__*/(0,exportHelper/* default */.Z)(svgRenderervue_type_script_lang_js, [['render',render]])
 
 /* harmony default export */ var svgRenderer = (__exports__);
-;// CONCATENATED MODULE: ./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/canvasRenderer.vue?vue&type=template&id=472698e0
+;// CONCATENATED MODULE: ./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/canvasRenderer.vue?vue&type=template&id=46ab2740
 
 
-const canvasRenderervue_type_template_id_472698e0_hoisted_1 = ["width", "height"]
+const canvasRenderervue_type_template_id_46ab2740_hoisted_1 = ["width", "height"]
 
-function canvasRenderervue_type_template_id_472698e0_render(_ctx, _cache, $props, $setup, $data, $options) {
+function canvasRenderervue_type_template_id_46ab2740_render(_ctx, _cache, $props, $setup, $data, $options) {
   const _directive_render_canvas = (0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.resolveDirective)("render-canvas")
 
   return (0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.withDirectives)(((0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.openBlock)(), (0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.createElementBlock)("canvas", {
@@ -2176,11 +2176,11 @@ function canvasRenderervue_type_template_id_472698e0_render(_ctx, _cache, $props
     onMousedown: _cache[1] || (_cache[1] = (0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.withModifiers)((...args) => (_ctx.canvasClick && _ctx.canvasClick(...args)), ["prevent"])),
     onTouchstart: _cache[2] || (_cache[2] = (0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.withModifiers)((...args) => (_ctx.canvasClick && _ctx.canvasClick(...args)), ["prevent"])),
     onTouchendPassive: _cache[3] || (_cache[3] = (...args) => (_ctx.canvasClick && _ctx.canvasClick(...args)))
-  }, null, 44, canvasRenderervue_type_template_id_472698e0_hoisted_1)), [
+  }, null, 44, canvasRenderervue_type_template_id_46ab2740_hoisted_1)), [
     [_directive_render_canvas, {links: _ctx.links, nodes: _ctx.nodes}]
   ])
 }
-;// CONCATENATED MODULE: ./src/components/canvasRenderer.vue?vue&type=template&id=472698e0
+;// CONCATENATED MODULE: ./src/components/canvasRenderer.vue?vue&type=template&id=46ab2740
 
 ;// CONCATENATED MODULE: ./src/lib/js/canvasStyles.js
 /**
@@ -2593,7 +2593,11 @@ function canvasRenderervue_type_template_id_472698e0_render(_ctx, _cache, $props
       let canvas = this.spriteCanvas(canvasSize)
       let ctx = canvas.getContext('2d')
       if (this.nodeSvg) {
-        let attrs = { width: size, height: size, class: style._cssClass || '', style: style._cssStyle || '' }
+        let attrs = {
+          width: size, height: size,
+          class: style._cssClass || '',
+          style: style._cssStyle || ''
+        }
         let url = svgExport.svgDataToUrl(this.nodeSvg, attrs)
         if (url) {
           let img = new Image()
@@ -2765,10 +2769,10 @@ function canvasRenderervue_type_template_id_472698e0_render(_ctx, _cache, $props
 
 ;// CONCATENATED MODULE: ./src/components/canvasRenderer.vue?vue&type=script&lang=js
  
-;// CONCATENATED MODULE: ./node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-39.use[0]!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-39.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-39.use[2]!./node_modules/stylus-loader/index.js??clonedRuleSet-39.use[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/canvasRenderer.vue?vue&type=style&index=0&id=472698e0&lang=stylus
+;// CONCATENATED MODULE: ./node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-39.use[0]!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-39.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-39.use[2]!./node_modules/stylus-loader/index.js??clonedRuleSet-39.use[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/canvasRenderer.vue?vue&type=style&index=0&id=46ab2740&lang=stylus
 // extracted by mini-css-extract-plugin
 
-;// CONCATENATED MODULE: ./src/components/canvasRenderer.vue?vue&type=style&index=0&id=472698e0&lang=stylus
+;// CONCATENATED MODULE: ./src/components/canvasRenderer.vue?vue&type=style&index=0&id=46ab2740&lang=stylus
 
 ;// CONCATENATED MODULE: ./src/components/canvasRenderer.vue
 
@@ -2778,7 +2782,7 @@ function canvasRenderervue_type_template_id_472698e0_render(_ctx, _cache, $props
 ;
 
 
-const canvasRenderer_exports_ = /*#__PURE__*/(0,exportHelper/* default */.Z)(canvasRenderervue_type_script_lang_js, [['render',canvasRenderervue_type_template_id_472698e0_render]])
+const canvasRenderer_exports_ = /*#__PURE__*/(0,exportHelper/* default */.Z)(canvasRenderervue_type_script_lang_js, [['render',canvasRenderervue_type_template_id_46ab2740_render]])
 
 /* harmony default export */ var canvasRenderer = (canvasRenderer_exports_);
 ;// CONCATENATED MODULE: ./src/lib/js/saveImage.js
@@ -2795,7 +2799,7 @@ const canvasRenderer_exports_ = /*#__PURE__*/(0,exportHelper/* default */.Z)(can
     let binStr = atob(dataURI.split(',')[1])
     let len = binStr.length
     let arr = new Uint8Array(len)
-    for (var i = 0; i < len; i++) {
+    for (let i = 0; i < len; i++) {
       arr[i] = binStr.charCodeAt(i)
     }
     cb(new Blob([arr]))
@@ -3018,7 +3022,9 @@ const d3 = Object.assign({}, d3_force_src_namespaceObject)
         if (!node.name && node.name !== '0') node.name = 'node ' + node.id
         if (node.svgSym) {
           node.svgIcon = svgExport.svgElFromString(node.svgSym)
-          if (!this.canvas && node.svgIcon && !node.svgObj) node.svgObj = svgExport.toObject(node.svgIcon)
+          if (!this.canvas && node.svgIcon && !node.svgObj) {
+            node.svgObj = svgExport.toObject(node.svgIcon)
+          }
         }
         return node
       })
@@ -3219,10 +3225,10 @@ const d3 = Object.assign({}, d3_force_src_namespaceObject)
 
 ;// CONCATENATED MODULE: ./src/vue-d3-network.vue?vue&type=script&lang=js
  
-;// CONCATENATED MODULE: ./node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-39.use[0]!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-39.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-39.use[2]!./node_modules/stylus-loader/index.js??clonedRuleSet-39.use[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/vue-d3-network.vue?vue&type=style&index=0&id=5b823922&lang=stylus
+;// CONCATENATED MODULE: ./node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-39.use[0]!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-39.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-39.use[2]!./node_modules/stylus-loader/index.js??clonedRuleSet-39.use[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/vue-d3-network.vue?vue&type=style&index=0&id=5e66f4cd&lang=stylus
 // extracted by mini-css-extract-plugin
 
-;// CONCATENATED MODULE: ./src/vue-d3-network.vue?vue&type=style&index=0&id=5b823922&lang=stylus
+;// CONCATENATED MODULE: ./src/vue-d3-network.vue?vue&type=style&index=0&id=5e66f4cd&lang=stylus
 
 ;// CONCATENATED MODULE: ./src/vue-d3-network.vue
 

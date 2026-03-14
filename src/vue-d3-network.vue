@@ -204,7 +204,9 @@ export default defineComponent({
         if (!node.name && node.name !== '0') node.name = 'node ' + node.id
         if (node.svgSym) {
           node.svgIcon = svgExport.svgElFromString(node.svgSym)
-          if (!this.canvas && node.svgIcon && !node.svgObj) node.svgObj = svgExport.toObject(node.svgIcon)
+          if (!this.canvas && node.svgIcon && !node.svgObj) {
+            node.svgObj = svgExport.toObject(node.svgIcon)
+          }
         }
         return node
       })

@@ -11,7 +11,7 @@ export default {
     let binStr = atob(dataURI.split(',')[1])
     let len = binStr.length
     let arr = new Uint8Array(len)
-    for (var i = 0; i < len; i++) {
+    for (let i = 0; i < len; i++) {
       arr[i] = binStr.charCodeAt(i)
     }
     cb(new Blob([arr]))

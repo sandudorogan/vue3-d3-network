@@ -22,6 +22,13 @@ module.exports = {
     'no-var': 2,
     'vue/multi-word-component-names': 'off',
     'vue/no-reserved-component-names': 'off',
-    'vue/no-v-text-v-html-on-component': 'off'
+    'vue/no-v-text-v-html-on-component': 'off',
+    'vue/require-prop-types': 'off',
+    'vue/require-default-prop': 'off',
+    'vue/attributes-order': 'off',
+    'vue/html-self-closing': 'off',
+    'vue/html-closing-bracket-newline': 'off',
+    'vue/order-in-components': 'off',
+    'vue/no-v-html': 'off'
   }
 }

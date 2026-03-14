@@ -284,7 +284,11 @@ export default defineComponent({
       let canvas = this.spriteCanvas(canvasSize)
       let ctx = canvas.getContext('2d')
       if (this.nodeSvg) {
-        let attrs = { width: size, height: size, class: style._cssClass || '', style: style._cssStyle || '' }
+        let attrs = {
+          width: size, height: size,
+          class: style._cssClass || '',
+          style: style._cssStyle || ''
+        }
         let url = svgExport.svgDataToUrl(this.nodeSvg, attrs)
         if (url) {
           let img = new Image()
