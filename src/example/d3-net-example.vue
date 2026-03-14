@@ -78,7 +78,8 @@ import D3Network from '../vue-d3-network.vue'
 import D3NetExampleMenu from './Menu.vue'
 import Selection from './Selection.vue'
 import nodeIcon from '../assets/node.svg?raw'
-export default {
+import { defineComponent } from 'vue'
+export default defineComponent({
   name: 'D3NetExample',
   components: {
     D3Network,
@@ -156,7 +157,7 @@ export default {
       }, 3000)
     },
     resetOptions () {
-      this.$set(this.$data, 'options', defaultData.options)
+      this.options = defaultData.options
       this.options.offset.x = 0
       this.options.offset.y = 0
     },
@@ -288,7 +289,7 @@ export default {
       this.lastLinkId++
     },
     selectLink (link) {
-      this.$set(this.linksSelected, link.id, link)
+      this.linksSelected[link.id] = link
     },
     selectionEvent (action, args) {
       utils.methodCall(this, action, args)
@@ -314,7 +315,7 @@ export default {
       this.showHint = false
     }
   }
-}
+})
 </script>
 <style lang="stylus">
   @import '../lib/styl/vars.styl'

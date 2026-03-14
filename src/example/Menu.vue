@@ -68,9 +68,11 @@
 </template>
 <script>
 import defaultData from './data.js'
-export default {
+import { defineComponent } from 'vue'
+export default defineComponent({
   name: 'D3NetExampleMenu',
   props: ['links', 'nodes', 'settings', 'options'],
+  emits: ['options', 'simulate', 'reset'],
   data () {
     let data = Object.assign({}, defaultData)
     return {
@@ -98,7 +100,7 @@ export default {
       this.$emit(e)
     }
   }
-}
+})
 </script>
 <style src="../assets/css/icons.css"></style>
 <style lang="stylus" scoped>
